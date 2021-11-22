@@ -5,6 +5,10 @@ const isProduction = process.env.EMBER_ENV === 'production';
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
+    sassOptions: {
+      includePaths: ['node_modules'],
+      quietDeps: true
+    },
     fingerprint: {
       prepend: '/app/themes/hundertsieben/dist/',
       replaceExtensions: ['html', 'php', 'css', 'js'],

@@ -1,0 +1,14 @@
+/* ==========================================================================
+  # APPLICATION HEADER
+  ========================================================================== */
+
+.c-application-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: spacing('large+base');
+  z-index: 10;
+  background-color: $color-secondary;
+  color: $color-typo-light;
+}

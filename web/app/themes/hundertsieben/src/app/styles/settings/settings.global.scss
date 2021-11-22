@@ -1,0 +1,137 @@
+///* ========================================================================
+//   #GLOBAL
+//   ======================================================================== */
+
+// The global settings file contains any project-wide variables; things that
+// need to be made available to the entire codebase.
+
+
+/* Typographic
+   ========================================================================== */
+
+// Baseline
+$inuit-global-baseline:               7px;
+
+// Base font size
+$inuit-global-font-size--large:       22px;
+$inuit-global-font-size:              16px;
+$inuit-global-font-size--small:       13px;
+$inuit-global-font-size--tiny:        10px;
+
+// Heading sizes
+$inuit-font-size-h1:                  35px;
+$inuit-font-size-h2:                  35px;
+$inuit-font-size-h3:                  $inuit-global-font-size--large;
+$inuit-font-size-h4:                  $inuit-global-font-size;
+$inuit-font-size-h5:                  $inuit-global-font-size--small;
+$inuit-font-size-h6:                  $inuit-global-font-size--small;
+
+$inuit-font-size-mobile-h1:           35px;
+$inuit-font-size-mobile-h2:           30px;
+$inuit-font-size-mobile-h3:           23px;
+$inuit-font-size-mobile-h4:           $inuit-global-font-size;
+$inuit-font-size-mobile-h5:           $inuit-global-font-size;
+$inuit-font-size-mobile-h6:           $inuit-global-font-size;
+
+// Letter spacing
+$inuit-global-letter-spacing:         0;
+$inuit-global-letter-spacing--large:  0.1em;
+
+// Font family
+$font-default:                        "Heebo", sans-serif;
+$font-headline:                       "Heebo", sans-serif;
+
+
+
+
+
+/* Color
+   ========================================================================== */
+
+// Main colors
+$color-primary:                     #ffd400;
+$color-secondary:                   #00abe8;
+
+// Other colors
+$color-black:                       #272727;
+$color-white:                       #fff;
+
+// Shades of grey
+$color-grey-light:                  #f9f8f8;
+$color-grey:                        #dadada;
+$color-grey-dark:                   #979797;
+$color-grey-darker:                 #5a5a5a;
+
+// State colors
+$color-error:                       #ff5a45;
+$color-success:                     #00b894;
+
+// Element colors
+$color-background:                  $color-grey;
+$color-typo-light:                  $color-white;
+$color-typo-dark:                   $color-black;
+
+// Gutenberg colors
+$colors: (
+  "white":                         $color-white,
+  "black":                         $color-black
+);
+
+
+
+
+
+/* Stuff
+   ========================================================================== */
+
+// Border
+$border-width--small:               1px;
+$border-width:                      2px;
+$border-width--large:               4px;
+$border-width--huge:                10px;
+
+// Header
+$header-height:                     100px;
+
+
+
+
+
+/* Breakpoints
+   ========================================================================== */
+
+$mq-breakpoints: (
+   mobile:  320px,
+   tablet:  601px,
+   desktop: 1024px,
+   wide:    1200px,
+   huge:    1600px
+);
+
+
+
+
+/* Objects
+   ========================================================================== */
+
+// Object Layout
+$inuit-use-markup-fix:              false;
+
+// Object Wrapper
+$inuit-wrapper-width--small:        800px;
+$inuit-wrapper-width:               1000px;
+$inuit-wrapper-width--large:        1200px;
+
+
+
+
+
+/* Utilities
+   ========================================================================== */
+
+// Utilities Widths
+$inuit-fractions:                   1 2 3 4 5 6 12;
+$inuit-offsets:                     true;
+
+// Assets Path
+$assets: "../";

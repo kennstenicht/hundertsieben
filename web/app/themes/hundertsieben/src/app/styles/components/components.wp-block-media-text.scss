@@ -1,0 +1,36 @@
+/* ==========================================================================
+  # WP BLOCK MEDIA TEXT
+  ========================================================================== */
+
+/**
+* Extend gutenberg core media text block style
+*/
+
+.wp-block-media-text {
+  min-height: 70vh;
+
+  &.has-background &__content {
+    padding-top: spacing("large");
+    padding-bottom: spacing("large");
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    & > h1,
+    & > h2,
+    & > h3 {
+      margin-top: spacing("large");
+    }
+
+    .wp-block-spacer {
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+  }
+
+  &.is-image-fill &__media {
+    min-height: 400px;
+  }
+}
+
+

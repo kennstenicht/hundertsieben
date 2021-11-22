@@ -1,0 +1,13 @@
+///* ========================================================================
+//   #RESET LAST
+//   ======================================================================== */
+
+/**
+ * Set margin to 0 of the last given element
+ */
+
+@mixin reset-last($element: p) {
+  #{$element}:last-of-type {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,90 @@
+/* ==========================================================================
+   #Forms
+   ========================================================================== */
+
+/**
+ * Simple default style for all form elements. Anything more opinionated
+ * than simple basic style changes should likely be applied via classes
+ */
+
+/* Input
+   ========================================================================== */
+
+input {
+  border-radius: 0;
+  box-shadow: inset 0 0 0 #000;
+}
+
+input:not([type=submit]):not([type=file]):not([type=checkbox]) {
+  padding: spacing("tiny", 4px) spacing("small");
+  width: 100%;
+  border-width: $border-width--small;
+  border-style: solid;
+  border-color: $color-grey;
+  border-radius: spacing("tiny");
+  font-family: $font-default;
+
+  @include inuit-font-size($inuit-global-font-size);
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+input[type=checkbox] {
+  margin-right: spacing("tiny");
+}
+
+
+
+
+
+/* Textarea
+   ========================================================================== */
+
+textarea {
+  padding: spacing("small");
+  width: 100%;
+  border-width: $border-width--small;
+  border-style: solid;
+  border-color: $color-grey;
+  border-radius: spacing("tiny");
+  resize: vertical;
+
+  @include inuit-font-size($inuit-global-font-size);
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+
+
+
+
+/* Label
+   ========================================================================== */
+
+label {
+  display: block;
+  margin-top: spacing("small");
+  color: $color-grey-darker;
+  text-transform: uppercase;
+  font-weight: normal;
+
+  @include inuit-font-size($inuit-global-font-size--small);
+}
+
+
+
+
+
+/* Button
+   ========================================================================== */
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

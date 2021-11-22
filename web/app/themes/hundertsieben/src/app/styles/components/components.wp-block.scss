@@ -1,0 +1,20 @@
+/* ==========================================================================
+  # WP BLOCK
+  ========================================================================== */
+
+/**
+ * Extend gutenberg default block style
+ */
+
+
+// .wp-block {
+//   max-width: $inuit-wrapper-width;
+// }
+
+// .wp-block[data-align="wide"] {
+//   max-width: $inuit-wrapper-width--large;
+// }
+
+.wp-block[data-align="full"] {
+  max-width: none;
+}

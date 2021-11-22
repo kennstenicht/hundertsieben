@@ -1,0 +1,81 @@
+/* ==========================================================================
+   #BURGER MENU
+   ========================================================================== */
+
+$height: 14px;
+$width: 20px;
+$line-height: 2px;
+$to-translate: ($height + 0) / 2;
+
+.c-burger-menu {
+  position: relative;
+  display: inline-block;
+  width: $width;
+  height: $height;
+
+  &:focus {
+    outline: none;
+  }
+
+  &__line {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: $line-height;
+    background-color: $color-white;
+    pointer-events: none;
+
+    &--1 {
+      top: 0;
+      transition: transform 0.3s ease-in-out, top 0.2s ease-in-out 0.3s;
+    }
+
+    &--1::before {
+      position: absolute;
+      width: 100%;
+      height: $line-height;
+      background-color: $color-white;
+      content: "";
+      transition: transform 0.1s ease-in-out 0.2s;
+      left: 0;
+    }
+
+    &--2 {
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      transition: opacity 0s ease-in-out 0.3s;
+      width: 80%;
+    }
+
+    &--3 {
+      bottom: 0;
+      transition: opacity 0s ease-in-out 0.3s;
+    }
+  }
+}
+
+
+.c-application-header--is-open .c-burger-menu {
+  &__line--1 {
+    top: $to-translate;
+    transition: top 0.3s ease-in-out, transform 0.3s linear 0.3s;
+    transform: rotate(135deg);
+  }
+
+  &__line--1::before {
+    transition: transform 0.1s ease-in-out 0.3s;
+    transform: rotate(90deg);
+  }
+
+  &__line--2 {
+    opacity: 0;
+    transition: opacity 0s ease-in-out 0.3s;
+  }
+
+  &__line--3 {
+    bottom: $to-translate;
+    opacity: 0;
+    transition: bottom 0.3s ease-in-out, opacity 0s ease-in-out 0.3s;
+  }
+}
