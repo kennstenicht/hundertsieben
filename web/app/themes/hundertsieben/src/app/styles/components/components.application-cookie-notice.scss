@@ -81,7 +81,7 @@
 
 @include mq($from: desktop) {
   .c-application-cookie-notice {
-    right: spacing('huge');
+    right: spacing('base');
     left: spacing('base');
     padding: spacing();
 

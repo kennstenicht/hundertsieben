@@ -1,0 +1,16 @@
+<div class={{bem this.blockName}} ...attributes>
+  <Application::Header />
+
+  <main class={{bem this.blockName "content"}}>
+    <div class="o-wrapper">
+      {{yield}}
+    </div>
+  </main>
+
+  <Application::Footer />
+
+  <Application::CookieNotice
+    @showCookieNotice={{this.showCookieNotice}}
+    @onToggleCookieNotice={{this.toggleCookieNotice}}
+  />
+</div>

@@ -3,12 +3,8 @@
   ========================================================================== */
 
 .c-application-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: spacing('large+base');
-  z-index: 10;
-  background-color: $color-secondary;
+  background-color: $color-black;
   color: $color-typo-light;
+  display: flex;
+  justify-content: space-between;
 }
