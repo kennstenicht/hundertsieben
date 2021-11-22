@@ -3,6 +3,7 @@
 module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'hundertsieben',
+    podModulePrefix: 'hundertsieben/routes',
     environment,
     rootURL: '/',
     locationType: 'auto',
