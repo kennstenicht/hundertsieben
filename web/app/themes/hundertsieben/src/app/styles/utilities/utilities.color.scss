@@ -17,3 +17,9 @@
     background-color: $color !important;
   }
 }
+
+
+.wp-block-cover.has-background-dim.has-terracotta-background-color {
+  background-image: url('background-terracotta.jpg');
+  background-size: 450px 450px;
+}

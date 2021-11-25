@@ -16,15 +16,14 @@ input {
 }
 
 input:not([type=submit]):not([type=file]):not([type=checkbox]) {
+  background-color: transparent;
   padding: spacing("tiny", 4px) spacing("small");
   width: 100%;
-  border-width: $border-width--small;
-  border-style: solid;
-  border-color: $color-grey;
-  border-radius: spacing("tiny");
+  border: none;
+  text-align: center;
   font-family: $font-default;
 
-  @include inuit-font-size($inuit-global-font-size);
+  @include inuit-font-size($inuit-font-size-h2);
 
   &:focus {
     outline: none;

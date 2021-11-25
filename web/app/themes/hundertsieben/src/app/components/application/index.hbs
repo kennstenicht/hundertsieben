@@ -2,9 +2,11 @@
   <Application::Header />
 
   <main class={{bem this.blockName "content"}}>
-    <div class="o-wrapper">
+    {{#if this.correctPassword}}
       {{yield}}
-    </div>
+    {{else}}
+      <Application::Login @onSuccess={{this.enterWebsite}} />
+    {{/if}}
   </main>
 
   <Application::Footer />

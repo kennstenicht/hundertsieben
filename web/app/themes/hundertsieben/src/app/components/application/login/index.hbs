@@ -1,0 +1,21 @@
+<div class={{bem this.blockName}} ...attributes>
+  <div class={{bem this.blockName "container"}}>
+    <Input
+      id="password"
+      placeholder="Enter the Password"
+      @type="text"
+      @value={{this.password}}
+    />
+
+    <Ui::Button
+      @label="Los gehts"
+      @onClick={{this.signIn}}
+    />
+
+    {{#if this.errorMessage}}
+      <div class={{bem this.blockName "error"}}>
+        {{this.errorMessage}}
+      </div>
+    {{/if}}
+  </div>
+</div>

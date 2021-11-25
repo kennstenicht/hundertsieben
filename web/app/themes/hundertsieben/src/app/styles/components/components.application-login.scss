@@ -1,0 +1,19 @@
+/* ==========================================================================
+  # APPLICATION LOGIN
+  ========================================================================== */
+
+.c-application-login {
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &__container {
+    max-width: 500px;
+  }
+
+  &__error {
+    background-color: $color-error;
+  }
+}

@@ -19,7 +19,7 @@ $inuit-global-font-size--small:       13px;
 $inuit-global-font-size--tiny:        10px;
 
 // Heading sizes
-$inuit-font-size-h1:                  35px;
+$inuit-font-size-h1:                  85px;
 $inuit-font-size-h2:                  35px;
 $inuit-font-size-h3:                  $inuit-global-font-size--large;
 $inuit-font-size-h4:                  $inuit-global-font-size;
@@ -38,10 +38,10 @@ $inuit-global-letter-spacing:         0;
 $inuit-global-letter-spacing--large:  0.1em;
 
 // Font family
-$font-default:                        "Heebo", sans-serif;
-$font-headline:                       "Heebo", sans-serif;
-
-
+$font-default:                        'Cormorant Garamond', serif;
+// $font-default:                        'Noto Serif Display', serif;
+// $font-default:                        'Prata', serif;
+$font-headline:                       $font-default;
 
 
 
@@ -49,12 +49,12 @@ $font-headline:                       "Heebo", sans-serif;
    ========================================================================== */
 
 // Main colors
-$color-primary:                     #ffd400;
-$color-secondary:                   #00abe8;
+$color-primary:                     #D2BDBC;
+$color-secondary:                   #BF6451;
 
 // Other colors
-$color-black:                       #272727;
-$color-white:                       #fff;
+$color-dark:                        #252220;
+$color-light:                       #F1EBE9;
 
 // Shades of grey
 $color-grey-light:                  #f9f8f8;
@@ -67,14 +67,16 @@ $color-error:                       #ff5a45;
 $color-success:                     #00b894;
 
 // Element colors
-$color-background:                  $color-grey;
-$color-typo-light:                  $color-white;
-$color-typo-dark:                   $color-black;
+$color-background:                  $color-light;
+$color-typo-light:                  $color-light;
+$color-typo-dark:                   $color-dark;
 
 // Gutenberg colors
 $colors: (
-  "white":                         $color-white,
-  "black":                         $color-black
+  "light":                         $color-light,
+  "soft-pink":                     $color-primary,
+  "terracotta":                    $color-secondary,
+  "dark":                          $color-dark
 );
 
 
