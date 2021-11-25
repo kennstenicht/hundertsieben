@@ -6,8 +6,8 @@ return [
             'duplicate-post' => true,
             'enable-media-replace' => true,
             'wp-api-menus' => true,
-            'wp-migrate-db-pro' => true,
             'wp-migrate-db-pro-media-files' => true,
+            'wp-migrate-db-pro' => true
         ],
     ]
 ];
