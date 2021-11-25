@@ -6,15 +6,6 @@ export default class ApplicationComponent extends Component {
   // Defaults
   blockName = "c-application"
   @tracked isNavigationOpen = false;
-  @tracked showCookieNotice = false;
-
-
-  // Hooks
-  constructor(owner, args) {
-    super(owner, args);
-
-    window.addEventListener('hashchange', this.checkHash.bind(this), false);
-  }
 
 
   // Actions
@@ -26,20 +17,5 @@ export default class ApplicationComponent extends Component {
   @action
   closeNavigation() {
     this.isNavigationOpen = false;
-  }
-
-  @action
-  toggleCookieNotice() {
-    this.showCookieNotice = !this.showCookieNotice;
-  }
-
-
-  // Functions
-  checkHash() {
-    if (location.hash == '#change-cookie-settings') {
-      this.toggleCookieNotice();
-
-      location.hash = '';
-    }
   }
 }
