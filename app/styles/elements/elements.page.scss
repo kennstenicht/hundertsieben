@@ -1,0 +1,29 @@
+/* ==========================================================================
+  #EXTEND PAGE
+  ========================================================================== */
+
+html {
+  font-size: $inuit-global-font-size / 16px * 1em;
+  line-height: $inuit-global-line-height / $inuit-global-font-size;
+  overflow-y: scroll;
+  height: 100%;
+  overflow-x: hidden;
+
+  &.no-scroll {
+    overflow-y: hidden;
+  }
+}
+
+body {
+  font-family: $font-default;
+  line-height: 1.5em;
+  font-weight: 300;
+  color: $color-dark;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  background-color: $color-background;
+}
+
+

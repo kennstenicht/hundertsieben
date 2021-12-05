@@ -1,25 +1,27 @@
-# Application
-web/app/plugins/*
-!web/app/plugins/.gitkeep
-web/app/mu-plugins/*/
-web/app/upgrade
-web/app/uploads/*
-!web/app/uploads/.gitkeep
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# WordPress
-web/wp
-web/.htaccess
+# compiled output
+/dist/
+/tmp/
 
-# Logs
-*.log
+# dependencies
+/bower_components/
+/node_modules/
 
-# Dotenv
+# misc
+/.env*
+/.pnp*
+/.sass-cache
+/connect.lock
+/coverage/
+/libpeerconnection.log
+/npm-debug.log*
+/testem.log
+/yarn-error.log
+.DS_Store
 .env
-.env.*
-!.env.example
 
-# Composer
-/vendor
-
-# WP-CLI
-wp-cli.local.yml
+# ember-try
+/.node_modules.ember-try/
+/bower.json.ember-try
+/package.json.ember-try
