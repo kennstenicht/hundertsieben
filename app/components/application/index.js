@@ -5,6 +5,7 @@ import { inject as service } from '@ember/service';
 
 export default class ApplicationComponent extends Component {
   // Services
+  @service app;
   @service cookies;
 
   // Defaults

@@ -27,7 +27,10 @@ input:not([type=submit]):not([type=file]):not([type=checkbox]) {
 
   &:focus {
     outline: none;
-    border-color: $color-primary;
+
+    @include color-mode() using ($colors) {
+      border-color: map-get($colors, 'primary');
+    }
   }
 }
 
@@ -55,7 +58,10 @@ textarea {
 
   &:focus {
     outline: none;
-    border-color: $color-primary;
+
+    @include color-mode() using ($colors) {
+      border-color: map-get($colors, 'primary');
+    }
   }
 }
 

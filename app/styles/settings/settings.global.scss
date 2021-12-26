@@ -20,7 +20,7 @@ $inuit-global-font-size--tiny:        10px;
 
 // Heading sizes
 $inuit-font-size-h1:                  85px;
-$inuit-font-size-h2:                  35px;
+$inuit-font-size-h2:                  40px;
 $inuit-font-size-h3:                  $inuit-global-font-size--large;
 $inuit-font-size-h4:                  $inuit-global-font-size;
 $inuit-font-size-h5:                  $inuit-global-font-size--small;
@@ -38,23 +38,39 @@ $inuit-global-letter-spacing:         0;
 $inuit-global-letter-spacing--large:  0.1em;
 
 // Font family
-$font-default:                        'Cormorant Garamond', serif;
-// $font-default:                        'Noto Serif Display', serif;
-// $font-default:                        'Prata', serif;
-$font-headline:                       $font-default;
+$font-serief:                         'Cormorant Garamond', serif;
+$font-mono:                           'IBM Plex Mono', monospace;
+$font-headline:                       $font-serief;
+$font-default:                        $font-serief;
 
 
 
 /* Color
    ========================================================================== */
 
-// Main colors
-$color-primary:                     #D2BDBC;
-$color-secondary:                   #BF6451;
+$mode-colors: (
+  'love': (
+    'primary':                      #BF6451,
+    'secondary':                    #D2BDBC,
+    'background':                   #e7dad8,
+    'typo-light':                   #F1EBE9,
+    'typo-dark':                    #252220,
+    'light':                        #F1EBE9,
+    'dark':                         #252220,
+    'intro-overlay':                rgba(#BF6451, 0.5),
 
-// Other colors
-$color-dark:                        #252220;
-$color-light:                       #F1EBE9;
+  ),
+  'fun': (
+    'primary':                      #D2BDBC,
+    'secondary':                    #BF6451,
+    'background':                   #131313,
+    'typo-light':                   #F1EBE9,
+    'typo-dark':                    #252220,
+    'light':                        #F1EBE9,
+    'dark':                         #252220,
+    'intro-overlay':                transparent,
+  )
+);
 
 // Shades of grey
 $color-grey-light:                  #f9f8f8;
@@ -66,10 +82,6 @@ $color-grey-darker:                 #5a5a5a;
 $color-error:                       #ff5a45;
 $color-success:                     #00b894;
 
-// Element colors
-$color-background:                  $color-light;
-$color-typo-light:                  $color-light;
-$color-typo-dark:                   $color-dark;
 
 
 
@@ -85,7 +97,7 @@ $border-width--large:               4px;
 $border-width--huge:                10px;
 
 // Header
-$header-height:                     100px;
+$frame-size:                        $inuit-global-baseline * 2;
 
 
 

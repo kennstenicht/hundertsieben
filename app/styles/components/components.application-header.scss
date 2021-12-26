@@ -3,13 +3,85 @@
   ========================================================================== */
 
 .c-application-header {
-  position: absolute;
-  top: spacing();
-  left: spacing();
-  right: spacing();
-  color: $color-typo-light;
-  display: flex;
-  justify-content: space-between;
-  padding: spacing() spacing() 0 spacing();
-  z-index: 2;
+  z-index: 10;
+
+  @include color-mode() using ($colors) {
+    color: map-get($colors, 'typo-light');
+  }
+
+  &__logo {
+    position: fixed;
+    height: 64px;
+  }
+
+    &__mark {
+      font-size: 80px;
+    }
+
+    &__subline {
+      position: absolute;
+      bottom: 0;
+      left: 2px;
+      font-family: $font-mono;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+    }
+
+  &__navigation {
+    position: fixed;
+  }
+}
+
+
+
+
+
+/* Media queryies
+   ========================================================================== */
+
+@include mq($until: desktop) {
+  .c-application-header {
+    &__logo {
+      height: 54px;
+      left: spacing('base+small');
+      top: spacing('base+small');
+    }
+
+      &__mark {
+        @include inuit-font-size(60px, false);
+      }
+
+      &__subline {
+        @include inuit-font-size(14px, false);
+      }
+
+    &__navigation {
+      top: spacing('base+small');
+      right: spacing('base+small');
+    }
+  }
+}
+
+@include mq($from: desktop) {
+  .c-application-header {
+    &__logo {
+      height: 64px;
+      left: spacing('large');
+      top: spacing('large');
+    }
+
+      &__mark {
+        @include inuit-font-size(80px, false);
+      }
+
+      &__subline {
+        @include inuit-font-size(18px, false);
+      }
+
+    &__navigation {
+      top: spacing('large');
+      right: spacing('large');
+    }
+  }
 }

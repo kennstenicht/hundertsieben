@@ -22,8 +22,11 @@ $to-translate: ($height + 0) / 2;
     right: 0;
     width: 100%;
     height: $line-height;
-    background-color: $color-light;
     pointer-events: none;
+
+    @include color-mode() using ($colors) {
+      background-color: map-get($colors, 'light');
+    }
 
     &--1 {
       top: 0;
@@ -34,10 +37,13 @@ $to-translate: ($height + 0) / 2;
       position: absolute;
       width: 100%;
       height: $line-height;
-      background-color: $color-light;
       content: "";
       transition: transform 0.1s ease-in-out 0.2s;
       left: 0;
+
+      @include color-mode() using ($colors) {
+        background-color: map-get($colors, 'light');
+      }
     }
 
     &--2 {

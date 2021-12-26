@@ -1,0 +1,46 @@
+/* ==========================================================================
+  # APPLICATION HEADER MODE SWITCH
+  ========================================================================== */
+
+.c-application-header-mode-switch {
+  position: relative;
+  width: spacing('large');
+  outline: 2px solid currentColor;
+  border-radius: spacing('small');
+  height: spacing('base');
+  padding: 2px;
+
+  &__label {
+    position: absolute;
+
+    &--light {
+      top: 5px;
+      left: 2px;
+    }
+
+    &--dark {
+      top: 5px;
+      right: 2px;
+    }
+  }
+
+    &__icon {
+      width: spacing('base');
+      height: 18px;
+      fill: currentColor;
+    }
+
+  &__switch {
+    position: absolute;
+    left: 2px;
+    width: spacing('base', -4px);
+    height: spacing('base', -4px);
+    background-color: currentColor;
+    border-radius: spacing('small');
+    transition: all 0.2s ease-in-out;
+  }
+
+  &--is-night &__switch{
+    transform: translate(spacing('base'), 0);
+  }
+}

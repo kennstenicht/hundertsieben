@@ -2,18 +2,52 @@
   # APPLICATION
   ========================================================================== */
 
-/**
- * Main content wrapper
- */
+// Animations
+@keyframes disco-frame {
+  0% {
+    border-color: red;
+  }
+  10% {
+    border-color: green;
+  }
+  20% {
+    border-color: blue;
+  }
+  40% {
+    border-color: yellow;
+  }
+  50% {
+    border-color: purple;
+  }
+  60% {
+    border-color: brown;
+  }
+  70% {
+    border-color: pink;
+  }
+  80% {
+    border-color: lime;
+  }
+  90% {
+    border-color: cyan;
+  }
+}
 
+
+// Component
 .c-application {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  padding: $frame-size;
+
+  @include color-mode('self') using ($colors) {
+    background-color: map-get($colors, 'background');
+  }
 
   &__content {
     flex-grow: 1;
-    background-color: $color-secondary;
+    min-height: calc(100vh - #{$frame-size} * 2);
   }
 
   &::after {
@@ -24,8 +58,36 @@
     left: 0;
     right: 0;
     bottom: 0;
-    border: spacing() solid $color-background;
     pointer-events: none;
-    z-index: 1;
+    z-index: 11;
+    border-style: solid;
+    border-width: $frame-size;
+    border-color: #F1EBE9;
+  }
+
+  &--mode-fun::after {
+    animation: disco-frame 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__christoph {
+    position: fixed;
+    bottom: spacing('large');
+    right: spacing('large');
+    z-index: 11;
+    color: currentColor;
+    transform: rotate(90deg) translate(0, 100%);
+    transform-origin: bottom right;
+  }
+
+  &__severine {
+    position: fixed;
+    bottom: spacing('large');
+    left: spacing('large');
+    z-index: 11;
+    color: currentColor;
+    transform: rotate(90deg) translate(-100%, 0);
+    transform-origin: bottom left;
   }
 }

@@ -1,0 +1,16 @@
+<div
+  class={{bem this.blockName modifiers=(hash
+    is-night=this.app.isModeFun
+  )}}
+  role="button"
+  {{on "click" this.app.toggleMode}}
+  ...attributes
+>
+  <div class={{bem this.blockName "label" modifiers=(hash light=true)}}>
+    {{svg-jar "light_mode" class=(bem this.blockName "icon")}}
+  </div>
+  <div class={{bem this.blockName "switch"}}></div>
+  <div class={{bem this.blockName "label" modifiers=(hash dark=true)}}>
+    {{svg-jar "dark_mode" class=(bem this.blockName "icon")}}
+  </div>
+</div>

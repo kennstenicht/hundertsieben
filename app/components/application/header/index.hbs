@@ -1,11 +1,17 @@
 <header class={{bem this.blockName}} ...attributes>
-  <div
-    class={{bem this.blockName "logo"}}
-    role="button"
-  >
-    Logo
+  <div class={{bem this.blockName "logo"}}>
+    <div class={{bem this.blockName "mark"}}>
+      {{t "application.header.mark"}}
+    </div>
+    <div class={{bem this.blockName "subline"}}>
+      {{#if this.app.isModeLove}}
+        {{t "application.header.subline.love"}}
+      {{else if this.app.isModeFun}}
+        {{t "application.header.subline.fun"}}
+      {{/if}}
+    </div>
   </div>
   <nav class={{bem this.blockName "navigation"}}>
-    Navigation
+    <Application::Header::ModeSwitch />
   </nav>
 </header>

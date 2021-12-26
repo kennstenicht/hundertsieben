@@ -1,0 +1,24 @@
+/* ==========================================================================
+   # COLOR MODE
+   ========================================================================== */
+
+/**
+ * Apply color mode modifier in one go.
+ */
+
+
+ @mixin color-mode($modifierElement: '.c-application') {
+  @each $mode, $colors in $mode-colors {
+    $modifier: '--mode-#{$mode}';
+
+    @if( $modifierElement == 'self') {
+      &#{$modifier} {
+        @content($colors);
+      }
+    } @else {
+      #{$modifierElement}#{$modifier} & {
+        @content($colors);
+      }
+    }
+  }
+}

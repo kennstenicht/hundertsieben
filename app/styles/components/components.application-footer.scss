@@ -3,7 +3,10 @@
   ========================================================================== */
 
 .c-application-footer {
-  background-color: $color-dark;
-  color: $color-light;
   padding: spacing() 0;
+
+  @include color-mode() using ($colors) {
+    background-color: map-get($colors, 'dark');
+    color: map-get($colors, 'light');
+  }
 }

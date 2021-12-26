@@ -13,3 +13,9 @@ application:
       analyse: Statistik
       externalMedia: Externe Medien
       required: Nur notwendige
+  # Header
+  header:
+    mark: '107'
+    subline:
+      love: Love
+      fun: Fun!
