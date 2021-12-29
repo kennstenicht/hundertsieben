@@ -1,0 +1,9 @@
+<div class={{bem this.blockName}} ...attributes>
+  <div class={{bem this.blockName "content"}}>
+    {{yield to="content"}}
+  </div>
+  <div class={{bem this.blockName "background"}}>
+    {{yield to="background"}}
+  </div>
+  <div class={{bem this.blockName "overlay"}}></div>
+</div>

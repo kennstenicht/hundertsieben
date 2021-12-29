@@ -1,0 +1,15 @@
+/* ==========================================================================
+  # CONTENT SECTION
+  ========================================================================== */
+
+.c-content-section {
+  max-width: 1200px;
+  margin: spacing('large') auto;
+  width: 100%;
+
+  &--style-light {
+    @include mode-settings() using ($settings, $mode) {
+      color: map-get($settings, 'color-typo-inverted');
+    }
+  }
+}
