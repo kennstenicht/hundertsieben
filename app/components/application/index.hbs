@@ -7,11 +7,7 @@
   <Application::Header />
 
   <main class={{bem this.blockName "content"}}>
-    {{#if this.correctPassword}}
-      {{yield}}
-    {{else}}
-      <Application::Login @onSuccess={{this.enterWebsite}} />
-    {{/if}}
+    {{yield}}
   </main>
 
   <Application::Footer />

@@ -1,0 +1,43 @@
+<Content::Cover>
+  <:content>
+    <div class={{bem this.blockName}} ...attributes>
+      {{#if this.randomQuestion}}
+        <h1 class={{bem this.blockName "title"}} id="question">
+          {{this.randomQuestion.question}}
+        </h1>
+        <div class={{bem this.blockName "answer"}}>
+          <Input
+            placeholder="Antwort eingeben"
+            aria-labelledby="question"
+            @type={{this.randomQuestion.type}}
+            @value={{this.answer}}
+          />
+        </div>
+
+        {{#if this.errorMessage}}
+          <div class={{bem this.blockName "error"}}>
+            {{this.errorMessage}}
+          </div>
+        {{/if}}
+
+        <Ui::Button data-hover="wirklich!?" {{on "click" this.newQuestion}}>
+          Keine Ahnung
+        </Ui::Button>
+
+        <Ui::Button data-hover="sicher?" {{on "click" this.signIn}}>
+          Ist doch einfach
+        </Ui::Button>
+
+      {{else}}
+        <div class={{bem this.blockName "title"}}>Bist du dir sicher, dass du eingeladen bist?</div>
+      {{/if}}
+    </div>
+  </:content>
+  <:background>
+    <img
+      alt={{this.randomQuestion.alt}}
+      class="u-grayscale"
+      src={{this.randomQuestion.image}}
+    >
+  </:background>
+</Content::Cover>

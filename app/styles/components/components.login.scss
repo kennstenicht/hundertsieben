@@ -1,16 +1,15 @@
 /* ==========================================================================
-  # APPLICATION LOGIN
+  # LOGIN
   ========================================================================== */
 
-.c-application-login {
-  margin: 0 auto;
-  max-width: 90vw;
+.c-login {
+  &__title {
+    text-transform: initial;
 
-  &__question {
-    font-size: 80px
+    @include inuit-font-size($inuit-font-size-h2);
   }
 
-  &__error {
-    background-color: $color-error;
+  &__answer {
+    margin-bottom: spacing('base+small');
   }
 }
