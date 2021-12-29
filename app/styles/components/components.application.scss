@@ -41,9 +41,10 @@
   flex-direction: column;
   padding: $frame-size;
 
-  @include color-mode('self') using ($colors) {
-    background-color: map-get($colors, 'background');
-    font-family: map-get($colors, 'font-default');
+  @include mode-settings('self') using ($settings, $mode) {
+    background-color: map-get($settings, 'color-background');
+    color: map-get($settings, 'color-typo');
+    font-family: map-get($settings, 'font-default');
   }
 
   &__content {
@@ -80,6 +81,8 @@
     transform: rotate(-90deg) translate(100%, 0);
     transform-origin: bottom right;
     line-height: 1;
+
+    @include inuit-font-size($inuit-global-font-size--tiny, false);
 
     &--is-christoph {
       right: spacing('large');

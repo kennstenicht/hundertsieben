@@ -14,12 +14,14 @@ h5,
 h6 {
   font-weight: 400;
 
-  @include color-mode() using ($colors) {
-    font-family: map-get($colors, 'font-headline');
+  @include mode-settings() using ($settings, $mode) {
+    font-family: map-get($settings, 'font-headline');
   }
 }
 
 h1 {
+  text-transform: uppercase;
+
   @include inuit-font-size($inuit-font-size-h1);
 }
 

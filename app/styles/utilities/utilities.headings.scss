@@ -10,10 +10,15 @@
 .u-h5,
 .u-h6 {
   font-weight: 400;
+  text-transform: initial;
 
-  @include color-mode() using ($colors) {
-    font-family: map-get($colors, 'font-headline');
+  @include mode-settings() using ($settings, $mode) {
+    font-family: map-get($settings, 'font-headline');
   }
+}
+
+.u-h1 {
+  text-transform: uppercase;
 }
 
 

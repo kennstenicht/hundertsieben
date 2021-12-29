@@ -3,10 +3,15 @@
   ========================================================================== */
 
 .c-application-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: spacing() 0;
+  min-height: calc(100vh - #{$frame-size} * 2);
 
-  @include color-mode() using ($colors) {
-    background-color: map-get($colors, 'dark');
-    color: map-get($colors, 'light');
+  @include mode-settings() using ($settings, $mode) {
+    background-color: map-get($settings, 'color-primary');
+    color: map-get($settings, 'color-typo');
   }
 }

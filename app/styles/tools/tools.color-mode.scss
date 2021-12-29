@@ -1,5 +1,5 @@
 /* ==========================================================================
-   # COLOR MODE
+   # MODE SETIINGS
    ========================================================================== */
 
 /**
@@ -7,17 +7,17 @@
  */
 
 
- @mixin color-mode($modifierElement: '.c-application') {
-  @each $mode, $colors in $mode-colors {
+ @mixin mode-settings($modifierElement: '.c-application') {
+  @each $mode, $settings in $mode-settings {
     $modifier: '--mode-#{$mode}';
 
     @if( $modifierElement == 'self') {
       &#{$modifier} {
-        @content($colors);
+        @content($settings, $mode);
       }
     } @else {
       #{$modifierElement}#{$modifier} & {
-        @content($colors);
+        @content($settings, $mode);
       }
     }
   }

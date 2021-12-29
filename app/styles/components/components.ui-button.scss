@@ -30,9 +30,9 @@
     transform: translateX(-100%);
     transition: transform 0.2s ease-in-out;
 
-    @include color-mode() using ($colors) {
-      color: map-get($colors, 'typo-dark');
-      background-color: map-get($colors, 'typo-light');
+    @include mode-settings() using ($settings, $mode) {
+      color: map-get($settings, 'color-typo-inverted');
+      background-color: map-get($settings, 'color-typo');
     }
   }
 

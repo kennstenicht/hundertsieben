@@ -21,24 +21,35 @@ input:not([type=submit]):not([type=file]):not([type=checkbox]) {
   width: 100%;
   border: none;
   text-align: center;
+  color: inherit;
 
-  @include color-mode() using ($colors) {
-    font-family: map-get($colors, 'font-default');
+  @include mode-settings() using ($settings, $mode) {
+    font-family: map-get($settings, 'font-default');
   }
 
-  @include inuit-font-size($inuit-font-size-h2);
+  @include inuit-font-size($inuit-font-size-h3);
 
   &:focus {
     outline: none;
 
-    @include color-mode() using ($colors) {
-      border-color: map-get($colors, 'primary');
+    @include mode-settings() using ($settings, $mode) {
+      border-color: map-get($settings, 'color-primary');
+    }
+  }
+
+  &::placeholder {
+    @include mode-settings() using ($settings, $mode) {
+      border-color: map-get($settings, 'color-typo');
     }
   }
 }
 
 input[type=checkbox] {
   margin-right: spacing("tiny");
+}
+
+input[type=date] {
+  width: auto !important;
 }
 
 
@@ -62,8 +73,8 @@ textarea {
   &:focus {
     outline: none;
 
-    @include color-mode() using ($colors) {
-      border-color: map-get($colors, 'primary');
+    @include mode-settings() using ($settings, $mode) {
+      border-color: map-get($settings, 'color-primary');
     }
   }
 }
@@ -78,8 +89,6 @@ textarea {
 label {
   display: block;
   margin-top: spacing("small");
-  color: $color-grey-darker;
-  text-transform: uppercase;
   font-weight: normal;
 
   @include inuit-font-size($inuit-global-font-size--small);

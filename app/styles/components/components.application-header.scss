@@ -5,8 +5,8 @@
 .c-application-header {
   z-index: 10;
 
-  @include color-mode() using ($colors) {
-    color: map-get($colors, 'typo-light');
+  @include mode-settings() using ($settings, $mode) {
+    color: map-get($settings, 'color-typo');
   }
 
   &__logo {
