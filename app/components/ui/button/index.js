@@ -9,12 +9,4 @@ export default class UiButtonComponent extends Component {
   get type() {
     return this.args.type ?? 'button';
   }
-
-  // Actions
-  @action
-  onClick() {
-    if (this.args.onClick && !this.args.disabled) {
-      this.args.onClick();
-    }
-  }
 }

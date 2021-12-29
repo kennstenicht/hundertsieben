@@ -1,21 +1,19 @@
 <button
   class={{bem this.blockName modifiers=(hash
-    style=@style
+    has-label=(has-block)
     is-active=@isActive
+    style=@style
   )}}
   disabled={{@disabled}}
   type={{this.type}}
-  {{on "click" this.onClick}}
   ...attributes
 >
   {{#if @icon}}
-    {{svg-jar @icon class=(bem this.blockName "icon" modifiers=(hash
-      has-label=@label
-    ))}}
+    {{svg-jar @icon class=(bem this.blockName "icon")}}
   {{/if}}
-  {{#if @label}}
+  {{#if (has-block)}}
     <div class={{bem this.blockName "label"}}>
-      {{@label}}
+      {{yield}}
     </div>
   {{/if}}
 </button>

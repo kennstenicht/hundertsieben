@@ -1,0 +1,68 @@
+/* ==========================================================================
+   # UI BUTTON
+   ========================================================================== */
+
+.c-ui-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  border-color: currentColor;
+  color: inherit;
+  padding: spacing('tiny') spacing('base');
+  border-style: solid;
+  border-width: $border-width;
+  overflow: hidden !important;
+  text-align: center;
+  font-family: inherit;
+
+  @include inuit-font-size($inuit-global-font-size);
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    padding: spacing('tiny') spacing('small');
+    width: 101%;
+    height: 100%;
+    content: 'Go!';
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-in-out;
+
+    @include color-mode() using ($colors) {
+      color: map-get($colors, 'typo-dark');
+      background-color: map-get($colors, 'typo-light');
+    }
+  }
+
+  &[data-hover]::before {
+    content: attr(data-hover);
+  }
+
+  &:hover::before {
+    transform: translateX(0);
+  }
+
+  // Disabled
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+
+
+  &__icon {
+    flex-shrink: 0;
+    fill: currentColor;
+  }
+
+  &--has-label &__icon{
+    margin-right: spacing('tiny');
+  }
+
+  &__label {
+    flex-grow: 1;
+    text-decoration: none;
+  }
+}
