@@ -8,15 +8,18 @@ export default class ApplicationComponent extends Component {
   @service app;
   @service cookies;
 
+
   // Defaults
   blockName = 'c-application';
   @tracked isNavigationOpen = false;
   @tracked correctPassword = this.isPasswordSaved;
 
+
   // Getter and setter
   get isPasswordSaved() {
     return this.cookies.read('isPasswordSaved') === 'true';
   }
+
 
   // Actions
   @action

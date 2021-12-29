@@ -72,23 +72,25 @@
     animation-iteration-count: infinite;
   }
 
-  &__christoph {
+  &__bridal {
     position: fixed;
     bottom: spacing('large');
-    right: spacing('large');
     z-index: 11;
     color: currentColor;
-    transform: rotate(90deg) translate(0, 100%);
+    transform: rotate(-90deg) translate(100%, 0);
     transform-origin: bottom right;
-  }
+    line-height: 1;
 
-  &__severine {
-    position: fixed;
-    bottom: spacing('large');
-    left: spacing('large');
-    z-index: 11;
-    color: currentColor;
-    transform: rotate(90deg) translate(-100%, 0);
-    transform-origin: bottom left;
+    &--is-christoph {
+      right: spacing('large');
+      transform: rotate(-90deg) translate(100%, 0);
+      transform-origin: bottom right;
+    }
+
+    &--is-severine {
+      left: spacing('large');
+      transform: rotate(-90deg) translate(0, 100%);
+      transform-origin: bottom left;
+    }
   }
 }
