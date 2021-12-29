@@ -1,13 +1,13 @@
 <header class={{bem this.blockName}} ...attributes>
   <div class={{bem this.blockName "logo"}}>
     <div class={{bem this.blockName "mark"}}>
-      {{t "application.header.mark"}}
+      107
     </div>
     <div class={{bem this.blockName "subline"}}>
-      {{#if this.app.isModeLove}}
-        {{t "application.header.subline.love"}}
-      {{else if this.app.isModeFun}}
-        {{t "application.header.subline.fun"}}
+      {{#if (is-mode "love")}}
+        Love
+      {{else if (is-mode "fun")}}
+        Fun!
       {{/if}}
     </div>
   </div>
