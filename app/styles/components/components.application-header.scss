@@ -11,11 +11,11 @@
 
   &__logo {
     position: fixed;
-    height: 64px;
   }
 
     &__mark {
       font-size: 80px;
+      font-family: $font-serief;
     }
 
     &__subline {
@@ -43,7 +43,7 @@
 @include mq($until: desktop) {
   .c-application-header {
     &__logo {
-      height: 54px;
+      height: 65px;
       left: spacing('base+small');
       top: spacing('base+small');
     }
@@ -66,7 +66,7 @@
 @include mq($from: desktop) {
   .c-application-header {
     &__logo {
-      height: 64px;
+      height: 76px;
       left: spacing('large');
       top: spacing('large');
     }

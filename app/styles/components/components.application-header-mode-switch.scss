@@ -3,6 +3,8 @@
   ========================================================================== */
 
 .c-application-header-mode-switch {
+  display: flex;
+  align-items: center;
   position: relative;
   width: spacing('large');
   outline: 2px solid currentColor;
@@ -12,14 +14,13 @@
 
   &__label {
     position: absolute;
+    line-height: 1em;
 
     &--light {
-      top: 5px;
       left: 2px;
     }
 
     &--dark {
-      top: 5px;
       right: 2px;
     }
   }

@@ -12,8 +12,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-headline;
   font-weight: 400;
+
+  @include color-mode() using ($colors) {
+    font-family: map-get($colors, 'font-headline');
+  }
 }
 
 h1 {

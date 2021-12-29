@@ -21,7 +21,10 @@ input:not([type=submit]):not([type=file]):not([type=checkbox]) {
   width: 100%;
   border: none;
   text-align: center;
-  font-family: $font-default;
+
+  @include color-mode() using ($colors) {
+    font-family: map-get($colors, 'font-default');
+  }
 
   @include inuit-font-size($inuit-font-size-h2);
 

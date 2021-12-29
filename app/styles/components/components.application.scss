@@ -43,6 +43,7 @@
 
   @include color-mode('self') using ($colors) {
     background-color: map-get($colors, 'background');
+    font-family: map-get($colors, 'font-default');
   }
 
   &__content {

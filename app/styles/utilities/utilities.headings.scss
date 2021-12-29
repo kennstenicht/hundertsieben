@@ -3,6 +3,19 @@
    ========================================================================== */
 
 
+.u-h1,
+.u-h2,
+.u-h3,
+.u-h4,
+.u-h5,
+.u-h6 {
+  font-weight: 400;
+
+  @include color-mode() using ($colors) {
+    font-family: map-get($colors, 'font-headline');
+  }
+}
+
 
 /* Mobile headline sizes
   ========================================================================== */

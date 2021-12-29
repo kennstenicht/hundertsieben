@@ -13,10 +13,10 @@
 $inuit-global-baseline:               7px;
 
 // Base font size
-$inuit-global-font-size--large:       22px;
-$inuit-global-font-size:              16px;
-$inuit-global-font-size--small:       13px;
-$inuit-global-font-size--tiny:        10px;
+$inuit-global-font-size--large:       28px;
+$inuit-global-font-size:              24px;
+$inuit-global-font-size--small:       20px;
+$inuit-global-font-size--tiny:        16px;
 
 // Heading sizes
 $inuit-font-size-h1:                  85px;
@@ -40,7 +40,7 @@ $inuit-global-letter-spacing--large:  0.1em;
 // Font family
 $font-serief:                         'Cormorant Garamond', serif;
 $font-mono:                           'IBM Plex Mono', monospace;
-$font-headline:                       $font-serief;
+$font-display:                        'Monoton';
 $font-default:                        $font-serief;
 
 
@@ -48,7 +48,7 @@ $font-default:                        $font-serief;
 /* Color
    ========================================================================== */
 
-$mode-colors: (
+   $mode-colors: (
   'love': (
     'primary':                      #BF6451,
     'secondary':                    #D2BDBC,
@@ -58,7 +58,8 @@ $mode-colors: (
     'light':                        #F1EBE9,
     'dark':                         #252220,
     'intro-overlay':                rgba(#BF6451, 0.5),
-
+    'font-headline':                $font-serief,
+    'font-default':                 $font-serief,
   ),
   'fun': (
     'primary':                      #D2BDBC,
@@ -69,6 +70,8 @@ $mode-colors: (
     'light':                        #F1EBE9,
     'dark':                         #252220,
     'intro-overlay':                transparent,
+    'font-headline':                $font-display,
+    'font-default':                 $font-mono,
   )
 );
 
