@@ -20,6 +20,41 @@
   </:background>
 </Content::Cover>
 
+<Content::Map
+  @lat="52.4746059"
+  @lng="13.4336433"
+  @zoom="14"
+  @style={{if
+      (is-mode "love")
+      "mapbox://styles/kennstenicht/ckxrus2aubnfo14lems6tti3y"
+      "mapbox://styles/mapbox/dark-v10"
+    }} as |map|
+    >
+  <map.Marker
+    @lat="52.472175"
+    @lng="13.429145"
+  />
+  <map.Marker
+    @lat="52.473577925508"
+    @lng="13.458946469616"
+    @title="Estrel"
+  />
+  <map.Marker
+    @lat="52.467388631232"
+    @lng="13.437456611201"
+    @title="Motel Plus"
+  />
+  <map.Marker
+    @lat="52.478951265222"
+    @lng="13.427090213522"
+    @title="Mercure Hotel Berlin Tempelhof"
+  />
+  <map.Marker
+    @lat="52.48065439254132"
+    @lng="13.425728440511273"
+    @title="Aeronaut Serviced Apartments"
+  />
+</Content::Map>
 <div>
   {{outlet}}
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

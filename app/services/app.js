@@ -5,7 +5,7 @@ import { action } from '@ember/object';
 export default class AppService extends Service {
   // Defaults
   @tracked mode = 'love';
-  @tracked isPasswordCorrect = false;
+  @tracked isPasswordCorrect = true;
 
 
   // Getter and setter

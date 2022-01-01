@@ -1,0 +1,11 @@
+<div
+  class={{bem this.blockName}}
+  {{did-insert this.setupMap}}
+  {{did-update this.updateStyle @style}}
+>
+  {{#if this.map}}
+    {{yield (hash
+      Marker=(component "content/map/marker" map=this.map)
+    )}}
+  {{/if}}
+</div>
