@@ -32,7 +32,29 @@
 
 <Content::MediaText @style="square" @isReverse={{true}} >
   <:media>
-    <img src="/assets/unsortiert/IMG_3215.JPG" alt="Blumenstrauß">
+    {{#if (is-mode "love")}}
+      <Content::Gallery />
+    {{else}}
+      <video
+          autoplay="true"
+          controls="false"
+          loop="true"
+          muted="true"
+          playsinline="true"
+        >
+          <source src="/assets/home/sevi_money_gif.MOV" type="video/mp4">
+        </video>
+    {{/if}}
+  </:media>
+  <:text>
+    <h2>Tipps für Geschenkesuchende</h2>
+    {{#if (is-mode "love")}}
+      <p>Unser größtes Geschenk ist es, mit euch zu feiern! Wenn ihr uns zusätzlich eine Freude machen wollt, freuen wir uns am meisten über einen finanziellen Zuschuss für unseren Start ins Eheleben.</p>
+    {{else}}
+      <p>Liebe, Gesundheit, Glück, Geld, Geld & <strong>Geld</strong> ;)</p>
+    {{/if}}
+  </:text>
+</Content::MediaText>
   </:media>
   <:text>
     <h2>Location</h2>

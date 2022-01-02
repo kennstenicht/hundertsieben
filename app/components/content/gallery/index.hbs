@@ -1,0 +1,31 @@
+<div class={{bem this.blockName}} ...attributes>
+  <div class={{bem this.blockName "list"}}>
+    {{#each this.imageArray as |number|}}
+      <img
+        class={{bem this.blockName "preview"}}
+        src="/assets/gallery/preview/image_{{number}}.jpg"
+        alt="{{number}}"
+        role="button"
+        {{on "click" (fn this.selectImage number)}}
+      />
+    {{/each}}
+    <div class={{bem this.blockName "text"}}>
+      Danke
+    </div>
+  </div>
+
+
+  {{#if this.selectedImage}}
+    <div
+      class={{bem this.blockName "overlay"}}
+      role="button"
+      {{on "click" (fn this.selectImage null)}}
+    >
+      <img
+        class={{bem this.blockName "image"}}
+        src="/assets/gallery/full/image_{{this.selectedImage}}.jpg"
+        alt="{{this.selectedImage}}"
+      />
+    </div>
+  {{/if}}
+</div>

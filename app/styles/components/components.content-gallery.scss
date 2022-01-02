@@ -1,0 +1,63 @@
+/* ==========================================================================
+  # CONTENT GALLERY
+  ========================================================================== */
+
+.c-content-gallery {
+  height: inherit;
+
+  &__list {
+    height: inherit;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(14, 1fr);
+  }
+
+    &__preview {
+      opacity: 0.6;
+      transition: opacity 0.3s ease-in-out;
+      filter: grayscale(1);
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+        filter: grayscale(0);
+      }
+    }
+
+    &__text {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      font-weight: bold;
+      font-size: 10vw;
+      text-transform: uppercase;
+    }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+
+  }
+
+    &__image {
+      position: relative;
+      object-fit: contain;
+      width: 90%;
+      height: 90%;
+      z-index: 2;
+    }
+}

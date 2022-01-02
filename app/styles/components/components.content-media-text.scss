@@ -6,14 +6,19 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  min-height: 100vh;
+
 
   &__media {
     grid-area: media;
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
 
-    img,
-    video {
+    @include mode-settings() using ($settings, $mode) {
+      background-color: map-get($settings, 'color-primary');
+    }
+
+    & > img,
+    & > video {
       display: block;
       object-fit: cover;
       height: 100%;
