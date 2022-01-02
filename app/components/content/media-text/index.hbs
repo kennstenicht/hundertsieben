@@ -1,0 +1,14 @@
+<div
+  class={{bem this.blockName modifiers=(hash
+    style=@style
+    is-reverse=@isReverse
+  )}}
+  ...attributes
+>
+  <div class={{bem this.blockName "media"}}>
+    {{yield to="media"}}
+  </div>
+  <div class={{bem this.blockName "text"}}>
+    {{yield to="text"}}
+  </div>
+</div>

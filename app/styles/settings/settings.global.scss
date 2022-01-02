@@ -14,7 +14,7 @@ $inuit-global-baseline:               7px;
 
 // Base font size
 $inuit-global-font-size--large:       28px;
-$inuit-global-font-size:              24px;
+$inuit-global-font-size:              21px;
 $inuit-global-font-size--small:       20px;
 $inuit-global-font-size--tiny:        16px;
 
@@ -59,7 +59,7 @@ $mode-settings: (
     'color-overlay':                rgba(#BF6451, 0.5),
 
     'font-headline':                $font-serief,
-    'font-default':                 $font-serief,
+    'font-default':                 $font-mono,
   ),
   'fun': (
     'color-primary':                #D2BDBC,

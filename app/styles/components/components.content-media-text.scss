@@ -1,0 +1,65 @@
+/* ==========================================================================
+  # CONTENT MEDIA TEXT
+  ========================================================================== */
+
+.c-content-media-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 100vh;
+
+  &__media {
+    grid-area: media;
+    height: 100%;
+
+    img,
+    video {
+      display: block;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__text {
+    grid-area: text;
+
+    @include mode-settings() using ($settings, $mode) {
+      color: map-get($settings, 'color-typo-inverted');
+    }
+  }
+}
+
+
+
+
+
+/* Media queryies
+   ========================================================================== */
+
+@include mq($until: desktop) {
+  .c-content-media-text {
+    grid-template-columns: 1fr;
+    grid-template-areas: "media"
+                         "text";
+
+    &__text {
+      padding: spacing('base');
+    }
+  }
+}
+
+@include mq($from: desktop) {
+  .c-content-media-text {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "media text";
+
+    &--is-reverse {
+      grid-template-areas: "text media";
+    }
+
+    &__text {
+      padding: spacing('large');
+    }
+  }
+}
