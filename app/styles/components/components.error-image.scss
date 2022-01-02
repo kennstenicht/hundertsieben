@@ -1,0 +1,58 @@
+/* ==========================================================================
+  # CONTENT MEDIA TEXT
+  ========================================================================== */
+
+.c-error-image {
+  display: grid;
+
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    @for $i from 0 through 6 {
+      &--row-#{$i} {
+        grid-row-start: #{$i+1};
+        grid-row-end: #{$i+2};
+      }
+    }
+
+    @for $i from 1 through 27 {
+      &--column-#{$i} {
+        grid-column-start: #{$i+1};
+        grid-column-end: #{$i+2};
+      }
+    }
+  }
+}
+
+
+
+
+
+/* Media queryies
+   ========================================================================== */
+
+@include mq($until: desktop) {
+  .c-error-image {
+    margin: 0 auto;
+    width: 90vw;
+    grid-template-columns: repeat(23, calc(90vw/23));
+    grid-template-rows: repeat(7, calc(90vw/23));
+  }
+}
+
+@include mq($from: desktop) {
+  .c-error-image {
+    margin: 0 auto;
+    width: 70vw;
+    grid-template-columns: repeat(23, calc(70vw/23));
+    grid-template-rows: repeat(7, calc(70vw/23));
+  }
+}

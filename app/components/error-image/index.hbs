@@ -1,0 +1,17 @@
+<div class={{bem this.blockName}}>
+  {{#each this.pixelMap as |columns row|}}
+    {{#each columns as |visible column|}}
+      {{#if visible}}
+        <img
+          class={{bem
+            this.blockName
+            'image'
+            modifiers=(hash row=row column=column)
+          }}
+          src="/assets/error/fehler_{{row}}_{{column}}.jpg"
+          alt="{{row}}_{{column}}"
+        />
+      {{/if}}
+    {{/each}}
+  {{/each}}
+</div>
