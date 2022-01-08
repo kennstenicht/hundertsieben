@@ -12,4 +12,8 @@
   &__answer {
     margin-bottom: spacing('base+small');
   }
+
+  &__error {
+    margin-top: spacing('base')
+  }
 }

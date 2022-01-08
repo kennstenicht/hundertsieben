@@ -1,6 +1,15 @@
 <div class={{bem this.blockName}} ...attributes>
-  <div class={{bem this.blockName "copy"}}>
-    &copy; {{this.currentYear}} &nbsp; &nbsp;
-    Meta Links
+  <div class={{bem this.blockName "content"}}>
+    {{#if this.app.isPasswordCorrect}}
+      <h3>Für alles andere, könnt ihr euch vertrauensvoll an unsere Trauzeugen wenden.</h3>
+      <p>Pascal: 0160 94447726 | Fabian: 0151 52720122</p>
+      <br><br><br><br><br><br>
+    {{/if}}
+    <nav>
+      <LinkTo @route="privacy">Datenschutzbedinungen</LinkTo>
+    </nav>
+    <div class={{bem this.blockName "copy"}}>
+      &copy; {{this.currentYear}} &nbsp; &nbsp;
+    </div>
   </div>
 </div>

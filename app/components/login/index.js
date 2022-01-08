@@ -1,6 +1,7 @@
 import Component from '@glimmer/component';
 import { tracked, TrackedSet } from 'tracked-built-ins';
 import { action } from '@ember/object';
+import { computed } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { next } from '@ember/runloop';
 
@@ -13,39 +14,9 @@ export default class ApplicationFooterComponent extends Component {
   // Defaults
   @tracked answer = '';
   blockName = 'c-login';
-  @tracked errorMessage = '';
-  @tracked randomQuestion = '';
+  @tracked showError = false;
+  @tracked randomQuestionIndex;
   questionHistory = new TrackedSet();
-  questions = [
-    {
-      answers: ['Johannes', 'johannes'],
-      image: '/assets/login/christoph.jpg',
-      question: 'Wie lautet der zweite Vorname des Bräutigam?',
-      type: 'text',
-      wrongAnswerMessage: 'Das ist leider falsch. Hast du dich evtl. vertippt?'
-    },
-    {
-      question: 'Wann ist die Braut oder der Bräutigam geboren?',
-      image: '/assets/login/wir.jpg',
-      answers: ['1988-09-02', '1986-04-07'],
-      type: 'date',
-      wrongAnswerMessage: 'Das ist leider falsch, schau mal in dein Kalender!'
-    },
-    {
-      question: 'In welchem Land wurder der Hochzeitsantrag gestellt?',
-      image: '/assets/login/antrag.jpg',
-      answers: ['Dänemark', 'dänemark'],
-      type: 'text',
-      wrongAnswerMessage: 'Das ist leider falsch, kleiner Tipp, es war auf dem Weg nach Koppenhagen.'
-    },
-    {
-      question: 'Wo haben wir zum ersten Mal geheiratet?',
-      answers: ['Fusion', 'fusion', 'Fusion Festival', 'fusion festival', 'Telefonzelle', 'telefonzelle', 'Hochzeitstelefonzelle', 'hochzeitstelefonzelle', 'Hochzeits-Telefonzelle', 'hochzeits-telefonzelle'],
-      image: '/assets/login/hochzeit.jpg',
-      type: 'text',
-      wrongAnswerMessage: 'Das ist leider falsch, aber wir können auch nicht gewährleisten das wir nicht einen vergessen haben.'
-    }
-  ];
 
 
   // Constructor
@@ -53,7 +24,7 @@ export default class ApplicationFooterComponent extends Component {
     super(...arguments);
 
     next(() => {
-      this.randomQuestion = this._getRandomQuestion();
+      this.randomQuestionIndex = this._getRandomQuestionIndex();
     })
   }
 
@@ -63,11 +34,91 @@ export default class ApplicationFooterComponent extends Component {
     return this.questionHistory.size < this.questions.length;
   }
 
+  get questions() {
+    console.log('question', this.answer);
+    return [
+      {
+        answers: ['Johannes', 'johannes'],
+        image: '/assets/login/christoph.jpg',
+        question: 'Wie ist der zweite Vorname des Bräutigams?',
+        type: 'text',
+        wrongAnswerMessage: `${this.answer} ist leider falsch. Hast du dich evtl. vertippt?`
+      },
+      {
+        question: 'Wann hat die Braut Geburtstag?',
+        image: '/assets/login/sevi_birthday.jpg',
+        answers: ['1986-04-07'],
+        type: 'date',
+        wrongAnswerMessage: 'Schau mal in dein Kalender, das ist schon ein bisschen peinlich.'
+      },
+      {
+        question: 'Wann hat der Bräutigam Geburtstag?',
+        image: '/assets/login/christoph_birthday.jpg',
+        answers: ['1988-09-02'],
+        type: 'date',
+        wrongAnswerMessage: 'Schau mal in dein Kalender, das ist schon ein bisschen peinlich!'
+      },
+      {
+        question: 'In welchem Land wurde der Antrag gemacht?',
+        image: '/assets/login/antrag.jpg',
+        answers: ['Dänemark', 'dänemark'],
+        type: 'text',
+        wrongAnswerMessage: `${this.answer} ist leider falsch... Kleiner Tipp, es war auf unsere Radtour nach Kopenhagen.`
+      },
+      {
+        question: 'Was ist besser als 100',
+        image: '/assets/login/hundertsieben.jpg',
+        answers: ['107', '107', 'Hundertsieben', 'hundertsieben', 'hundert sieben', '107%', '107 %'],
+        type: 'text',
+        wrongAnswerMessage: `Warum sollte ${this.answer} besser als 100 sein?`
+      },
+      {
+        question: 'In welchem Bezirk wohnt das Brautpaar?',
+        image: '/assets/login/neukoelln.jpg',
+        answers: ['Neukölln', 'neukölln', 'neuköln', 'Neuköln', 'Berlin Neukölln', 'Berlin-Neukölln'],
+        type: 'text',
+        wrongAnswerMessage: `Wie bitte!? Wir wohnen im zwar im Ghetto aber bestimmt nicht in ${this.answer}.`
+      },
+      {
+        question: 'Nenne einen der Trauzeugen',
+        image: '/assets/login/trauzeugen.jpg',
+        answers: ['Fabian', 'fabian', 'Fabi', 'fabi', 'Fabian-Alexander', 'Fabian Wirths', 'fabian wirths', 'Fabian Alexander Wirths', 'Pascal', 'pascla', 'Pasci', 'pasci', 'Pascal Sarközi', 'pascal sarközi'],
+        type: 'text',
+        wrongAnswerMessage: 'Es gibt nur zwei, so schwer kann es nicht sein.'
+      },
+      {
+        question: 'Wo hat das Brautpaar zum ersten Mal geheiratet?',
+        answers: ['Fusion', 'fusion', 'Fusion Festival', 'fusion festival', 'Telefonzelle', 'telefonzelle', 'Hochzeitstelefonzelle', 'hochzeitstelefonzelle', 'Hochzeits-Telefonzelle', 'hochzeits-telefonzelle'],
+        image: '/assets/login/hochzeit.jpg',
+        type: 'text',
+        wrongAnswerMessage: 'Utz, utz, utz... The Question is What is the Question?'
+      },
+      {
+        question: 'Nenne einen Spitznamen der Braut',
+        answers: ['Sevi', 'sevi', 'Sippel', 'sippel', 'Sippel7', 'sippel7', 'Schwippo', 'schwippo', 'Suip', 'suip', 'Ziege', 'ziege'],
+        image: '/assets/login/sevi_bike.jpg',
+        type: 'text',
+        wrongAnswerMessage: `Du nennst die Braut evtl. ${this.answer}, aber uns ist der Spitzname nicht bekannt.`
+      }
+    ];
+  }
+
+  get randomQuestion() {
+    return this.questions[this.randomQuestionIndex];
+  }
 
   // Actions
   @action
+  updateAnswer(event) {
+    this.answer = event.target.value;
+    this.showError = false;
+  }
+
+  @action
   newQuestion() {
-    this.randomQuestion = this._getRandomQuestion();
+    this.randomQuestionIndex = this._getRandomQuestionIndex();
+    this.answer = '';
+    this.showError = false;
   }
 
   @action
@@ -75,27 +126,32 @@ export default class ApplicationFooterComponent extends Component {
     if (this.randomQuestion.answers.includes(this.answer)) {
       this.app.isPasswordCorrect = true;
       this.router.transitionTo('home');
-      this.errorMessage = '';
     } else {
-      this.errorMessage = this.randomQuestion.wrongAnswerMessage;
+      this.showError = true;
     }
+  }
+
+  @action
+  startOver() {
+    this.questionHistory = new TrackedSet();
+    this.newQuestion();
   }
 
 
   // Functions
-  _getRandomQuestion() {
-    let index = this._getRandomInt(0, 4);
+  _getRandomQuestionIndex() {
+    let index = this._getRandomInt(0, this.questions.length);
 
     if (!this.hasMoreQuestions) {
       return
     }
 
     if (this.questionHistory.has(index)) {
-      return this._getRandomQuestion();
+      return this._getRandomQuestionIndex();
     }
 
     this.questionHistory.add(index);
-    return this.questions[index];
+    return index;
   }
 
   _getRandomInt(min, max) {

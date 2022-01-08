@@ -6,30 +6,35 @@
           {{this.randomQuestion.question}}
         </h1>
         <div class={{bem this.blockName "answer"}}>
-          <Input
+          <input
             placeholder="Antwort eingeben"
             aria-labelledby="question"
-            @type={{this.randomQuestion.type}}
-            @value={{this.answer}}
+            type={{this.randomQuestion.type}}
+            value={{this.answer}}
+            {{on "input" this.updateAnswer}}
           />
         </div>
 
-        {{#if this.errorMessage}}
-          <div class={{bem this.blockName "error"}}>
-            {{this.errorMessage}}
-          </div>
-        {{/if}}
-
         <Ui::Button data-hover="wirklich!?" {{on "click" this.newQuestion}}>
-          Keine Ahnung
+          Andere Frage
         </Ui::Button>
 
         <Ui::Button data-hover="sicher?" {{on "click" this.signIn}}>
           Ist doch einfach
         </Ui::Button>
 
+        {{#if this.showError}}
+          <div class={{bem this.blockName "error"}}>
+            {{this.randomQuestion.wrongAnswerMessage}}
+          </div>
+        {{/if}}
       {{else}}
-        <div class={{bem this.blockName "title"}}>Bist du dir sicher, dass du eingeladen bist?</div>
+        <h1 class={{bem this.blockName "title"}}>
+          Bist du sicher, dass du eingeladen bist?
+        </h1>
+        <Ui::Button data-hover="Noch mal von vorne!" {{on "click" this.startOver}}>
+          Ja, ich denk noch mal nach
+        </Ui::Button>
       {{/if}}
     </div>
   </:content>
