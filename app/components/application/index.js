@@ -18,6 +18,7 @@ export default class ApplicationComponent extends Component {
 
     if (!this.fastboot?.isFastBoot) {
       this.fixCssVh();
+      window.addEventListener('resize', this.fixCssVh);
     }
   }
 
