@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: spacing() 0;
+  padding: spacing() spacing('base+small');
   min-height: calc(100vh - #{$frame-size} * 2);
 
   @include mode-settings() using ($settings, $mode) {
