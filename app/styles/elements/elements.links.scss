@@ -12,3 +12,24 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+.c-application__content a {
+  padding-bottom: 3px;
+  background-position: 0% 100%;
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
+
+  @include mode-settings() using ($settings, $mode) {
+    background-image: linear-gradient(
+      to bottom,
+      map-get($settings, 'color-overlay') 0%,
+      map-get($settings, 'color-overlay') 100%
+    );
+
+  }
+
+  @include attention() {
+    background-size: 100% 100%;
+  }
+}

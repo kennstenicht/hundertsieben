@@ -6,10 +6,10 @@
   display: flex;
   align-items: center;
   position: relative;
-  width: spacing('large');
-  outline: 2px solid currentColor;
-  border-radius: spacing('small');
-  height: spacing('base');
+  width: spacing('large', 4px);
+  border: 2px solid currentColor;
+  border-radius: spacing('base');
+  height: spacing('base', 4px);
   padding: 2px;
 
   &__label {

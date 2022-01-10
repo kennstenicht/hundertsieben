@@ -1,0 +1,13 @@
+/* ==========================================================================
+  # VH
+  ========================================================================== */
+
+/**
+* Small tool to generate vh according to global --vh variable
+* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+*/
+
+
+@function vh($vh: 0) {
+  @return calc(var(--vh, 1vh) * #{$vh});
+}

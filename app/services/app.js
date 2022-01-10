@@ -5,7 +5,7 @@ import { action } from '@ember/object';
 export default class AppService extends Service {
   // Defaults
   @tracked mode = 'love';
-  @tracked isPasswordCorrect = true;
+  @tracked isPasswordCorrect = false;
 
 
   // Getter and setter
@@ -21,6 +21,7 @@ export default class AppService extends Service {
   // Actions
   @action
   toggleMode() {
+    window.scrollTo(0,0);
     this.mode = this.mode === 'love' ? 'fun' : 'love';
   }
 }

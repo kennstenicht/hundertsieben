@@ -8,6 +8,15 @@ module.exports = function (environment) {
     rootURL: '/',
     locationType: 'auto',
 
+    emberKeyboard: {
+      disableInputsInitializer: true,
+      propagation: true
+    },
+
+    fastboot: {
+      hostWhitelist: ['hundertsieben.love', /^localhost:\d+$/]
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

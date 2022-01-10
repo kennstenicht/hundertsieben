@@ -2,16 +2,37 @@
   # CONTENT MEDIA TEXT
   ========================================================================== */
 
+// Animations
+$color-stobe-dark: darken(#1a1a1a, 2%);
+
+@keyframes strobe {
+  0% { background: $color-stobe-dark; }
+  30% { background: $color-stobe-dark; }
+  31% { background: transparent; }
+  32% { background: $color-stobe-dark; }
+  82% { background: $color-stobe-dark; }
+  84% { background: transparent; }
+  86% { background: $color-stobe-dark; }
+  88% { background: transparent; }
+  90% { background: $color-stobe-dark; }
+  92% { background: transparent; }
+  94% { background: $color-stobe-dark; }
+  96% { background: transparent; }
+  98% { background: $color-stobe-dark; }
+}
+
 .c-content-media-text {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
 
-
   &__media {
+    position: relative;
     grid-area: media;
-    height: 100vh;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @include mode-settings() using ($settings, $mode) {
       background-color: map-get($settings, 'color-primary');
@@ -35,6 +56,17 @@
   }
 }
 
+.c-application--mode-fun .c-content-media-text__media::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  content: '';
+  animation: strobe 3000ms steps(1,end) infinite;
+  opacity: 1;
+}
+
 
 
 
@@ -51,6 +83,10 @@
     &__text {
       padding: spacing('base');
     }
+
+    &__media {
+      height: 70vh;
+    }
   }
 }
 
@@ -65,6 +101,10 @@
 
     &__text {
       padding: spacing('large');
+    }
+
+    &__media {
+      height: 100vh;
     }
   }
 }

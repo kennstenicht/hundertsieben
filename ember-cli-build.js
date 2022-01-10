@@ -9,9 +9,15 @@ module.exports = function (defaults) {
       quietDeps: true,
     },
     fingerprint: {
-      prepend: '/app/themes/hundertsieben/dist/',
-      replaceExtensions: ['html', 'php', 'css', 'js'],
+      extensions: ['js', 'css', 'map']
     },
+    prember: {
+      urls: [
+        '/',
+        '/login',
+        '/privacy'
+      ]
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated

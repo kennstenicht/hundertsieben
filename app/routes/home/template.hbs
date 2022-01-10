@@ -7,36 +7,44 @@
     {{#if (is-mode "love")}}
       <img src="/assets/teaser/background_love.jpg" alt="Blumenstrauß">
     {{else}}
-      <video
-        autoplay="true"
-        controls="false"
-        loop="true"
-        muted="true"
-        playsinline="true"
-      >
-        <source src="/assets/teaser/background_fun.mov" type="video/mp4">
-      </video>
+      <Content::Video>
+        <source src="/assets/teaser/background_fun.mp4" type="video/mp4">
+      </Content::Video>
     {{/if}}
   </:background>
 </Content::Cover>
 
 <Content::Section @style="primary">
-  <h2>Ihr Lieben, wir Heiraten! </h2>
+  {{#if (is-mode "love")}}
+    <h2>Ihr Lieben, wir heiraten! </h2>
 
-  <p>Nach 10 Jahren und 7 Monaten machen wir es offiziell. Und wie könnte man eine Hochzeit besser verbringen als mit den Menschen, die uns in den letzten Jahren auf unserem Weg begleitet haben. Wir laden euch daher herzlich ein, diesen besonderen Tag mit uns zu verbringen! Auf dieser Webseite findet ihr die wichtigsten Informationen rund um unsere Hochzeit.</p>
+    <p>Nach 10 Jahren und 7 Monaten machen wir es offiziell. Und wie könnte man eine Hochzeit besser verbringen als mit den Menschen, die uns in den letzten Jahren auf unserem Weg begleitet haben. Wir laden euch daher herzlich ein, diesen besonderen Tag mit uns zu verbringen!</p>
 
-  <p>Wir freuen uns auf euch!</p>
+    <p>Wir freuen uns auf euch!</p>
 
-  Bis ganz bald, Severine & Christoph
+    Bis ganz bald, Severine & Christoph
+  {{else}}
+    <h2>Tick,tock… It's wedding o'clock</h2>
+
+    <p>Hi! Na? Nach zehn Jahren kommen wir endlich unter die Haube. Und wir haben Lust, das so richtig mit euch zu feiern! Wenn du also diesen Link erhalten hast, ist es sehr wahrscheinlich, dass du zu denen gehörst, mit denen wir unbedingt ein Gläschen trinken oder ein Tänzchen wagen möchten.</p>
+
+    <p>Never.Ending.Fun</p>
+
+    Bis ganz bald, Severine & Christoph
+  {{/if}}
 </Content::Section>
 
 <Content::MediaText @style="square" @isReverse={{true}} >
   <:media>
-    <img src="/assets/home/fusion_edited.jpg" alt="Die richtige Hochzeit auf der Fusion">
+    {{#if (is-mode "love")}}
+      <img src="/assets/home/wedding_day.jpg" alt="Wedding Party">
+    {{else}}
+      <img src="/assets/home/wedding_night.jpg" alt="Wedding Party">
+    {{/if}}
   </:media>
   <:text>
     <h2>Trauung</h2>
-    <p>Vor der Feier werden wir uns im Rahmen einer freien Trauung das Ja-Wort geben. Dazu seid ihr natürlich auch herzlich eingeladen wenn ihr mögt. Hier sind wir noch in der Planung, Infos zu Zeit & Ort folgen zeitnah. Vermutlich starten wir gegen 15 Uhr. Wir freuen uns über eine kurze Rückmeldung, ob ihr an der Trauung teilnehmen möchtet.</p>
+    <p>Vor der Feier werden wir uns im Rahmen einer freien Trauung das Ja-Wort geben. Dazu seid ihr natürlich auch herzlich eingeladen, wenn ihr mögt. Hier sind wir noch in der Planung, Infos zu Zeit & Ort folgen zeitnah. Vermutlich starten wir gegen 15 Uhr. Wir freuen uns über eine kurze Rückmeldung, ob ihr an der Trauung teilnehmen möchtet.</p>
   </:text>
 </Content::MediaText>
 
@@ -45,13 +53,15 @@
     {{#if (is-mode "love")}}
       <img src="/assets/home/21gramm_day.jpg" alt="Festtafel im 21 Gramm">
     {{else}}
-      <img src="/assets/home/21gramm_night.jpg" alt="Festtafel im 21 Gramm">
+      <Content::Video>
+        <source src="/assets/home/bfb2e8c4-d20b-4db0-b901-29e233c8fdd2.MP4" type="video/mp4">
+      </Content::Video>
     {{/if}}
   </:media>
   <:text>
     <h2>Feier</h2>
-    <p>Die Feier startet um 18 Uhr im 21 Gramm in Neukölln. Wir freuen uns auf einen schönen Abend mit euch, gutem Essen und dem ein oder anderen Drink in entspannter Atmosphäre.</p>
-    <p>Dresscode: In Neukölln darf jeder wie er mag. Kommt daher so, wie ihr euch wohlfühlt (Weiß wäre vielleicht ungünstig ;) ) Vergesst nicht, eure Dancing Shoes einzupacken.</p>
+    <p>Die Feier startet um 18 Uhr im <a href="https://21gramm.berlin/de/startseite/" rel="noopener noreferrer" target="_blank">21 Gramm</a> in Neukölln. Wir freuen uns auf einen schönen Abend mit euch, gutem Essen und dem ein oder anderen Drink in entspannter Atmosphäre.</p>
+    <p>Dresscode: In Neukölln darf jeder wie er mag. Kommt daher so, wie ihr euch wohlfühlt. Vergesst nicht, eure Dancing Shoes einzupacken.</p>
   </:text>
 </Content::MediaText>
 
@@ -61,18 +71,18 @@
       <Content::Gallery />
     {{else}}
       <video
-          autoplay="true"
-          controls="false"
-          loop="true"
-          muted="true"
-          playsinline="true"
-        >
-          <source src="/assets/home/sevi_money_gif.MOV" type="video/mp4">
-        </video>
+        autoplay="true"
+        controls="false"
+        loop="true"
+        muted="true"
+        playsinline="true"
+      >
+        <source src="/assets/home/sevi_money_gif.MOV" type="video/mp4">
+      </video>
     {{/if}}
   </:media>
   <:text>
-    <h2>Tipps für Geschenkesuchende</h2>
+    <h2>Tipps für Geschenke&shy;suchende</h2>
     {{#if (is-mode "love")}}
       <p>Unser größtes Geschenk ist es, mit euch zu feiern! Wenn ihr uns zusätzlich eine Freude machen wollt, freuen wir uns am meisten über einen finanziellen Zuschuss für unseren Start ins Eheleben.</p>
     {{else}}
@@ -83,12 +93,29 @@
 
 <Content::MediaText @style="square">
   <:media>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdByXwP3teRaJPzfTaxHCR0taC5IfyaNNP2P8PRrkhTabOVOg/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
+    <div class="u-h3 u-font-default">
+      <a href="mailto:hi.na@hundersieben.love">hi.na@&shy;hundersieben.love</a>
+    </div>
   </:media>
   <:text>
     <h2>Rückmeldung</h2>
-    <p>Bitte gebt uns bis zum 28.02.2022 Bescheid, ob ihr kommen könnt. Meldet euch dafür einfach bei uns und schreibt uns eine kurze Nachricht. Falls ihr schon wisst, ob ihr auch zur Trauung kommen wollt, gebt gern Bescheid.</p>
-    <p>hi.na@hundersieben.love</p>
+    <p>Bitte gebt uns bis zum 28.02.2022 Bescheid, ob ihr kommen könnt. Meldet euch dafür einfach bei uns und schreibt uns eine kurze Nachricht. Falls ihr schon wisst, dass ihr auch zur Trauung kommen wollt, gebt uns gern ebenfalls Bescheid.</p>
+  </:text>
+</Content::MediaText>
+
+<Content::MediaText @style="square" @isReverse={{true}} >
+  <:media>
+    {{#if (is-mode "love")}}
+      <img src="/assets/home/hotel_day.jpg" alt="Wedding Party">
+    {{else}}
+      <img src="/assets/home/hotel_night.jpg" alt="Wedding Party">
+    {{/if}}
+  </:media>
+  <:text>
+    <h2>Übernachtung</h2>
+    <p>Für alle, die von weiter her anreisen, haben wir auf der Karte weiter unten ein paar Tipps für Übernachtungsmöglichkeiten in der Nähe der Location eingezeichnet.</p>
+    <p>Schaut auch gern bei <a href="https://www.booking.com/district/de/berlin/neukolln.de.html" target="_blank" rel="noopener noreferrer">Booking</a> oder <a href="https://www.airbnb.de/neukolln-berlin-germany/stays" rel="noopener noreferrer" target="_blank">airbnb</a> nach Unterkünften in Neukölln oder in der näheren Umgebung.</p>
+    <p>Die Parkplatzsituation in Berlin ist schwierig. Wir empfehlen euch daher den ÖPNV zu nutzten oder wer es komfortabler mag, kann sich mit den Apps <a href="https://ocie.app.link/6qlyRoi7dfb?%243p=a_custom_47734&uclick_id=c8509380-57c9-48a5-ab9f-f6000f980596&~tune_publisher_sub1=b94fafa4-6670-4249-92ba-46080dfc3d06" rel="noopener noreferrer" target="_blank">Uber</a> oder <a href="https://mytaxi.onelink.me/HySP" target="_blank" rel="noopener noreferrer">FreeNow</a> ganz bequem ein Taxi bestellen.</p>
   </:text>
 </Content::MediaText>
 

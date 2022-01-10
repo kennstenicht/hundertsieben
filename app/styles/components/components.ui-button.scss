@@ -40,7 +40,7 @@
     content: attr(data-hover);
   }
 
-  &:hover::before {
+  &:hover:not(:disabled)::before {
     transform: translateX(0);
   }
 

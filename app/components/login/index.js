@@ -15,17 +15,13 @@ export default class ApplicationFooterComponent extends Component {
   @tracked answer = '';
   blockName = 'c-login';
   @tracked showError = false;
-  @tracked randomQuestionIndex;
-  questionHistory = new TrackedSet();
+  @tracked randomQuestionIndex = 7;
+  questionHistory = new TrackedSet([7]);
 
 
   // Constructor
   constructor() {
     super(...arguments);
-
-    next(() => {
-      this.randomQuestionIndex = this._getRandomQuestionIndex();
-    })
   }
 
 
@@ -34,8 +30,11 @@ export default class ApplicationFooterComponent extends Component {
     return this.questionHistory.size < this.questions.length;
   }
 
+  get noAnswer() {
+    return this.answer.length < 1;
+  }
+
   get questions() {
-    console.log('question', this.answer);
     return [
       {
         answers: ['Johannes', 'johannes'],
@@ -47,15 +46,15 @@ export default class ApplicationFooterComponent extends Component {
       {
         question: 'Wann hat die Braut Geburtstag?',
         image: '/assets/login/sevi_birthday.jpg',
-        answers: ['1986-04-07'],
-        type: 'date',
+        answers: ['07.04.1986', '07. 04. 1986', '07.04.86', '7.4.1986', '7.4.86', '7. April 1986', '7. April 86', '7 April 1986', '7 April 86', '7. Apr. 1986', '7 Apr 1986', '1986-04-07'],
+        type: 'text',
         wrongAnswerMessage: 'Schau mal in dein Kalender, das ist schon ein bisschen peinlich.'
       },
       {
         question: 'Wann hat der Bräutigam Geburtstag?',
         image: '/assets/login/christoph_birthday.jpg',
-        answers: ['1988-09-02'],
-        type: 'date',
+        answers: ['02.09.1988', '02. 09. 1988', '02.09.88', '2.9.1988', '2.9.88', '2. September 1988', '2. September 88', '2 September 1988', '2 September 88', '2. Sep. 1988', '2 Sep 1988', '1988-09-02'],
+        type: 'text',
         wrongAnswerMessage: 'Schau mal in dein Kalender, das ist schon ein bisschen peinlich!'
       },
       {
@@ -123,7 +122,7 @@ export default class ApplicationFooterComponent extends Component {
 
   @action
   signIn() {
-    if (this.randomQuestion.answers.includes(this.answer)) {
+    if (this.randomQuestion.answers.includes(this.answer.trim())) {
       this.app.isPasswordCorrect = true;
       this.router.transitionTo('home');
     } else {

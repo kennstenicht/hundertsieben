@@ -2,6 +2,20 @@
    #HEADINGS
    ========================================================================== */
 
+  @keyframes anim {
+    0% { text-shadow: 2px -4px 0px green; }
+    10% { text-shadow: 2px 3px 0px purple; }
+    20% { text-shadow: 2px -4px 0px yellow; }
+    30% { text-shadow: -4px 2px 0px red; }
+    40% { text-shadow: -5px 2px 0px blue; }
+    50% { text-shadow: -5px 2px 0px orange; }
+    60% { text-shadow: -4px -2px 0px lime; }
+    70% { text-shadow: -3px 2px 0px brown; }
+    80% { text-shadow: 2px 3px 0px pink; }
+    90% { text-shadow: -4px 2px 0px teal; }
+    100% { text-shadow: 2px -3px 0px cyan; }
+  }
+
 
 /* Default heading style
    ========================================================================== */
@@ -43,6 +57,13 @@ h5 {
 
 h6 {
   @include inuit-font-size($inuit-font-size-h6);
+}
+
+.c-application--mode-fun h1,
+.c-application--mode-fun h2 {
+  animation: anim 3s;
+  animation-timing-function: linear;
+  animation-iteration-count:infinite;
 }
 
 

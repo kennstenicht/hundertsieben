@@ -27,8 +27,6 @@ input:not([type=submit]):not([type=file]):not([type=checkbox]) {
     font-family: map-get($settings, 'font-default');
   }
 
-  @include inuit-font-size($inuit-font-size-h3);
-
   &:focus {
     outline: none;
 
@@ -39,7 +37,7 @@ input:not([type=submit]):not([type=file]):not([type=checkbox]) {
 
   &::placeholder {
     @include mode-settings() using ($settings, $mode) {
-      border-color: map-get($settings, 'color-typo');
+      color: map-get($settings, 'color-typo');
     }
   }
 }

@@ -1,0 +1,5 @@
+.u-font-default {
+  @include mode-settings() using ($settings, $mode) {
+    font-family: map-get($settings, 'font-default') !important;
+  }
+}

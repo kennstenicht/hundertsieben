@@ -2,7 +2,7 @@
   <:content>
     <div class={{bem this.blockName}} ...attributes>
       {{#if this.randomQuestion}}
-        <h1 class={{bem this.blockName "title"}} id="question">
+        <h1 class="{{bem this.blockName "title"}} u-h2"  id="question">
           {{this.randomQuestion.question}}
         </h1>
         <div class={{bem this.blockName "answer"}}>
@@ -11,16 +11,27 @@
             aria-labelledby="question"
             type={{this.randomQuestion.type}}
             value={{this.answer}}
+            class="u-h3"
             {{on "input" this.updateAnswer}}
           />
         </div>
 
-        <Ui::Button data-hover="wirklich!?" {{on "click" this.newQuestion}}>
-          Andere Frage
+        <Ui::Button
+          class={{bem this.blockName "button"}}
+          data-hover="sicher?"
+          disabled={{this.noAnswer}}
+          {{on "click" this.signIn}}
+          {{on-key 'Enter' this.signIn}}
+        >
+          Ist doch einfach
         </Ui::Button>
 
-        <Ui::Button data-hover="sicher?" {{on "click" this.signIn}}>
-          Ist doch einfach
+        <Ui::Button
+          class={{bem this.blockName "button"}}
+          data-hover="wirklich!?"
+          {{on "click" this.newQuestion}}
+        >
+          Andere Frage
         </Ui::Button>
 
         {{#if this.showError}}
@@ -33,7 +44,7 @@
           Bist du sicher, dass du eingeladen bist?
         </h1>
         <Ui::Button data-hover="Noch mal von vorne!" {{on "click" this.startOver}}>
-          Ja, ich denk noch mal nach
+          Ich denk noch mal nach
         </Ui::Button>
       {{/if}}
     </div>
