@@ -5,12 +5,8 @@
 html {
   font-size: $inuit-global-font-size / 16px * 1em;
   line-height: $inuit-global-line-height / $inuit-global-font-size;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
-
-  &.no-scroll {
-    overflow-y: hidden;
-  }
 }
 
 body {
