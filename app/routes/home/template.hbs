@@ -95,35 +95,52 @@
 <Content::Map
   @lat="52.4746059"
   @lng="13.4336433"
-  @zoom="14"
   @style={{if
-      (is-mode "love")
-      "mapbox://styles/kennstenicht/ckxrus2aubnfo14lems6tti3y"
-      "mapbox://styles/mapbox/dark-v10"
-    }} as |map|
-    >
+    (is-mode "love")
+    "mapbox://styles/kennstenicht/ckxrus2aubnfo14lems6tti3y"
+    "mapbox://styles/mapbox/dark-v10"
+  }} as |map|
+>
   <map.Marker
     @lat="52.472175"
     @lng="13.429145"
+    @title="21 Gramm"
+    @link="https://21gramm.berlin/de/startseite/"
+    @icon="location"
   />
   <map.Marker
     @lat="52.473577925508"
     @lng="13.458946469616"
     @title="Estrel"
+    @link="https://www.estrel.com/de/hotel"
+    @icon="hotel"
   />
   <map.Marker
     @lat="52.467388631232"
     @lng="13.437456611201"
     @title="Motel Plus"
+    @link="https://motelplus-berlin.de"
+    @icon="hotel"
   />
   <map.Marker
     @lat="52.478951265222"
     @lng="13.427090213522"
-    @title="Mercure Hotel Berlin Tempelhof"
+    @title="Mercure Hotel"
+    @link="https://mercure-hotel-berlin-tempelhof-airport.at-hotels.com/de/"
+    @icon="hotel"
   />
   <map.Marker
     @lat="52.48065439254132"
     @lng="13.425728440511273"
-    @title="Aeronaut Serviced Apartments"
+    @title="Aeronaut Apartments"
+    @link="https://pearl1.de/de/apartment/aeronaut/"
+    @icon="hotel"
+  />
+  <map.Marker
+    @lat="52.482025581725495"
+    @lng="13.430808127016865"
+    @title="Hotel Erlanger Hof"
+    @link="https://www.erlanger-hof.de/"
+    @icon="hotel"
   />
 </Content::Map>

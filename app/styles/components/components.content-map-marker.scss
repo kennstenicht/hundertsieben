@@ -1,0 +1,31 @@
+/* ==========================================================================
+  # CONTENT MAP
+  ========================================================================== */
+
+.c-content-map-marker {
+  width: spacing('base+small');
+  height: spacing('base+small');
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+
+  &--icon-hotel {
+    background-image: url('/assets/icons/hotel.svg');
+  }
+
+  &--icon-location {
+    background-image: url('/assets/icons/location.svg');
+  }
+}
+
+
+.mapboxgl-popup-content {
+  padding: spacing('base') !important;
+  text-align: center;
+
+  @include mode-settings() using ($settings, $mode) {
+    color: map-get($settings, 'color-tertiary');
+  }
+}
