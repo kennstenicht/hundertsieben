@@ -41,7 +41,10 @@ export default class ApplicationFooterComponent extends Component {
         image: '/assets/login/christoph.jpg',
         question: 'Wie ist der zweite Vorname des Bräutigams?',
         type: 'text',
-        wrongAnswerMessage: `${this.answer} ist leider falsch. Hast du dich evtl. vertippt?`
+        wrongAnswerMessage: `${this.answer} ist leider falsch. Hast du dich evtl. vertippt?`,
+        style: {
+          "object-position" : "60% 50%"
+        }
       },
       {
         question: 'Wann hat die Braut Geburtstag?',
@@ -90,14 +93,20 @@ export default class ApplicationFooterComponent extends Component {
         answers: ['Fusion', 'fusion', 'Fusion Festival', 'fusion festival', 'Telefonzelle', 'telefonzelle', 'Hochzeitstelefonzelle', 'hochzeitstelefonzelle', 'Hochzeits-Telefonzelle', 'hochzeits-telefonzelle'],
         image: '/assets/login/hochzeit.jpg',
         type: 'text',
-        wrongAnswerMessage: 'Utz, utz, utz... The Question is What is the Question?'
+        wrongAnswerMessage: 'Utz, utz, utz... The Question is What is the Question?',
+        style: {
+          "object-position" : "20% 70%"
+        }
       },
       {
         question: 'Nenne einen Spitznamen der Braut',
         answers: ['Sevi', 'sevi', 'Sippel', 'sippel', 'Sippel7', 'sippel7', 'Schwippo', 'schwippo', 'Suip', 'suip', 'Ziege', 'ziege'],
         image: '/assets/login/sevi_bike.jpg',
         type: 'text',
-        wrongAnswerMessage: `Du nennst die Braut evtl. ${this.answer}, aber uns ist der Spitzname nicht bekannt.`
+        wrongAnswerMessage: `Du nennst die Braut evtl. ${this.answer}, aber uns ist der Spitzname nicht bekannt.`,
+        style: {
+          "object-position" : "70% 50%"
+        }
       }
     ];
   }
