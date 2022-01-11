@@ -1,0 +1,11 @@
+<div class={{bem this.blockName}} {{did-insert this.nextSlide}} ...attributes>
+  {{#each @images as |image index|}}
+    <img
+      class={{bem this.blockName "image" modifiers=(hash
+        is-active=(eq this.activeSlide index)
+      )}}
+      src={{image.src}}
+      alt={{image.alt}}
+    />
+  {{/each}}
+</div>

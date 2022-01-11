@@ -39,7 +39,30 @@
     {{#if (is-mode "love")}}
       <img src="/assets/home/wedding_day.jpg" alt="Wedding Party">
     {{else}}
-      <img src="/assets/home/wedding_night.jpg" alt="Wedding Party">
+      <Content::Slider
+        @images={{array
+          (hash
+            src="/assets/home/wedding_night1.jpg"
+            alt="Übernachtung auf der Wiese"
+          )
+          (hash
+            src="/assets/home/wedding_night2.jpg"
+            alt="Übernachtung im Zelt"
+          )
+          (hash
+            src="/assets/home/wedding_night3.jpg"
+            alt="Übernachtung im Flugzeug"
+          )
+          (hash
+            src="/assets/home/wedding_night4.jpg"
+            alt="Übernachtung auf dem Sofa"
+          )
+          (hash
+            src="/assets/home/wedding_night5.jpg"
+            alt="Übernachtung auf dem Sofa mit Katze"
+          )
+        }}
+      />
     {{/if}}
   </:media>
   <:text>
@@ -70,15 +93,9 @@
     {{#if (is-mode "love")}}
       <Content::Gallery />
     {{else}}
-      <video
-        autoplay="true"
-        controls="false"
-        loop="true"
-        muted="true"
-        playsinline="true"
-      >
+      <Content::Video>
         <source src="/assets/home/sevi_money_gif.MOV" type="video/mp4">
-      </video>
+      </Content::Video>
     {{/if}}
   </:media>
   <:text>
@@ -94,7 +111,7 @@
 <Content::MediaText @style="square">
   <:media>
     <div class="u-h3 u-font-default">
-      <a href="mailto:hi.na@hundersieben.love">hi.na@&shy;hundersieben.love</a>
+      <a href="mailto:hi.na@hundertsieben.love">hi.na&shy;@hundertsieben.love</a>
     </div>
   </:media>
   <:text>
@@ -106,9 +123,32 @@
 <Content::MediaText @style="square" @isReverse={{true}} >
   <:media>
     {{#if (is-mode "love")}}
-      <img src="/assets/home/hotel_day.jpg" alt="Wedding Party">
+      <img src="/assets/home/hotel_day.jpg" alt="Übernachtung im Luxushotel">
     {{else}}
-      <img src="/assets/home/hotel_night.jpg" alt="Wedding Party">
+      <Content::Slider
+        @images={{array
+          (hash
+            src="/assets/home/hotel_night.jpg"
+            alt="Übernachtung auf der Wiese"
+          )
+          (hash
+            src="/assets/home/hotel_night2.jpg"
+            alt="Übernachtung im Zelt"
+          )
+          (hash
+            src="/assets/home/hotel_night3.jpg"
+            alt="Übernachtung im Flugzeug"
+          )
+          (hash
+            src="/assets/home/hotel_night4.jpg"
+            alt="Übernachtung auf dem Sofa"
+          )
+          (hash
+            src="/assets/home/hotel_night5.jpg"
+            alt="Übernachtung auf dem Sofa mit Katze"
+          )
+        }}
+      />
     {{/if}}
   </:media>
   <:text>
