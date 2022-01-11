@@ -21,7 +21,7 @@ export default class AppService extends Service {
   // Actions
   @action
   toggleMode() {
-    window.scrollTo(0,0);
+    document.querySelector('.c-application__content').scrollTo(0,0);
     this.mode = this.mode === 'love' ? 'fun' : 'love';
   }
 }
