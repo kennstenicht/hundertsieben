@@ -121,7 +121,8 @@
 
 <Content::Map
   @lat="52.4746059"
-  @lng="13.4336433"
+  @lng="13.441086"
+  @zoom={{if (media 'isMobile') '12.5' '13.5'}}
   @style={{if
     (is-mode "love")
     "mapbox://styles/kennstenicht/ckxrus2aubnfo14lems6tti3y"
