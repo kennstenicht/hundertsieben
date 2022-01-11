@@ -23,8 +23,8 @@ a {
   @include mode-settings() using ($settings, $mode) {
     background-image: linear-gradient(
       to bottom,
-      map-get($settings, 'color-overlay') 0%,
-      map-get($settings, 'color-overlay') 100%
+      map-get($settings, 'color-link') 0%,
+      map-get($settings, 'color-link') 100%
     );
 
   }

@@ -57,7 +57,7 @@ $mode-settings: (
     'color-typo':                   #F1EBE9,
     'color-typo-inverted':          #3d3835,
     'color-overlay':                rgba(#BF6451, 0.5),
-
+    'color-link':                   rgba(#BF6451, 0.5),
     'font-headline':                $font-serief,
     'font-default':                 $font-mono,
   ),
@@ -69,7 +69,7 @@ $mode-settings: (
     'color-typo':                   #F1EBE9,
     'color-typo-inverted':          #F1EBE9,
     'color-overlay':                transparent,
-
+    'color-link':                   #ff5a45,
     'font-headline':                $font-display,
     'font-default':                 $font-mono,
   )
