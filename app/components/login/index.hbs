@@ -7,7 +7,7 @@
         </h1>
         <div class={{bem this.blockName "answer"}}>
           <input
-            placeholder="Antwort eingeben"
+            placeholder="Antwort hier eingeben"
             aria-labelledby="question"
             type={{this.randomQuestion.type}}
             value={{this.answer}}
@@ -19,7 +19,6 @@
         <Ui::Button
           class={{bem this.blockName "button"}}
           data-hover="sicher?"
-          disabled={{this.noAnswer}}
           {{on "click" this.signIn}}
           {{on-key 'Enter' this.signIn}}
         >

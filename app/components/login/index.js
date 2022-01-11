@@ -30,18 +30,20 @@ export default class ApplicationFooterComponent extends Component {
     return this.questionHistory.size < this.questions.length;
   }
 
-  get noAnswer() {
-    return this.answer.length < 1;
-  }
-
   get questions() {
+    let answer = this.answer ?? "Keine Antwort";
+
+    if (answer.length < 1) {
+      answer = "Keine Antwort";
+    }
+
     return [
       {
         answers: ['Johannes', 'johannes'],
         image: '/assets/login/christoph.jpg',
         question: 'Wie ist der zweite Vorname des Bräutigams?',
         type: 'text',
-        wrongAnswerMessage: `${this.answer} ist leider falsch. Hast du dich evtl. vertippt?`,
+        wrongAnswerMessage: `${answer} ist leider falsch. Hast du dich evtl. vertippt?`,
         style: {
           "object-position" : "60% 50%"
         }
@@ -65,21 +67,21 @@ export default class ApplicationFooterComponent extends Component {
         image: '/assets/login/antrag.jpg',
         answers: ['Dänemark', 'dänemark'],
         type: 'text',
-        wrongAnswerMessage: `${this.answer} ist leider falsch... Kleiner Tipp, es war auf unsere Radtour nach Kopenhagen.`
+        wrongAnswerMessage: `"${answer}" ist leider falsch... Kleiner Tipp, es war auf unsere Radtour nach Kopenhagen.`
       },
       {
         question: 'Was ist besser als 100',
         image: '/assets/login/hundertsieben.jpg',
         answers: ['107', '107', 'Hundertsieben', 'hundertsieben', 'hundert sieben', '107%', '107 %'],
         type: 'text',
-        wrongAnswerMessage: `Warum sollte ${this.answer} besser als 100 sein?`
+        wrongAnswerMessage: `Warum sollte "${answer}" besser als 100 sein?`
       },
       {
         question: 'In welchem Bezirk wohnt das Brautpaar?',
         image: '/assets/login/neukoelln.jpg',
         answers: ['Neukölln', 'neukölln', 'neuköln', 'Neuköln', 'Berlin Neukölln', 'Berlin-Neukölln'],
         type: 'text',
-        wrongAnswerMessage: `Wie bitte!? Wir wohnen im zwar im Ghetto aber bestimmt nicht in ${this.answer}.`
+        wrongAnswerMessage: `Wie bitte!? Wir wohnen im zwar im Ghetto aber bestimmt nicht in "${answer}".`
       },
       {
         question: 'Nenne einen der Trauzeugen',
@@ -103,7 +105,7 @@ export default class ApplicationFooterComponent extends Component {
         answers: ['Sevi', 'sevi', 'Sippel', 'sippel', 'Sippel7', 'sippel7', 'Schwippo', 'schwippo', 'Suip', 'suip', 'Ziege', 'ziege'],
         image: '/assets/login/sevi_bike.jpg',
         type: 'text',
-        wrongAnswerMessage: `Du nennst die Braut evtl. ${this.answer}, aber uns ist der Spitzname nicht bekannt.`,
+        wrongAnswerMessage: `Du nennst die Braut evtl. "${answer}", aber uns ist der Spitzname nicht bekannt.`,
         style: {
           "object-position" : "70% 50%"
         }

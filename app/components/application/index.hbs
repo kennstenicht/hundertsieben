@@ -9,6 +9,10 @@
   <main class={{bem this.blockName "content"}}>
     {{yield}}
 
+    {{#if this.app.isPasswordCorrect}}
+      <Application::ScrollHint />
+    {{/if}}
+
     <Application::Footer />
   </main>
 
