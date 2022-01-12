@@ -80,5 +80,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "smoothscroll-polyfill": "^0.4.4"
   }
 }

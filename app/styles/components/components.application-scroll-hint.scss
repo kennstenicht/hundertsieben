@@ -14,7 +14,7 @@ $anim-timing: 3s;
   height: $circle-w;
   bottom: spacing('base');
   left: 50%;
-  transform: translateY(-50%);
+  transform: translateX(-50%);
   filter: url("#goo");
   z-index: 99;
 
@@ -47,7 +47,6 @@ $anim-timing: 3s;
     }
 
   }
-
 
   .st-arrow{
     fill:$arrow-bg;
