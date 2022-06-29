@@ -6,7 +6,7 @@ module.exports = function (environment) {
     podModulePrefix: 'hundertsieben/routes',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'history',
 
     emberKeyboard: {
       disableInputsInitializer: true,
@@ -14,7 +14,7 @@ module.exports = function (environment) {
     },
 
     fastboot: {
-      hostWhitelist: ['hundertsieben.love', /^localhost:\d+$/]
+      hostWhitelist: ['hundertsieben.love']
     },
 
     EmberENV: {
