@@ -4,8 +4,8 @@ import { tracked } from '@glimmer/tracking';
 
 export default class ContentCoverComponent extends Component {
   // Defaults
-  blockName = 'c-content-cover';
-  @tracked dateString = '';
+  blockName = 'c-content-countdown';
+  @tracked distance = 0;
 
 
   // Hooks
@@ -16,19 +16,30 @@ export default class ContentCoverComponent extends Component {
 
     const x = setInterval(() => {
       const now = new Date().getTime();
-      const distance = countDownDate - now;
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      this.dateString = `${days} : ${hours} : ${minutes} : ${seconds}`;
-
-      if (distance < 0) {
-        clearInterval(x);
-        this.dateString = '💒 👰 🎊 🎉 🍾 🍻';
-      }
+      this.distance = countDownDate - now;
     }, 1000);
+  }
+
+
+  // Getter and setter
+  get isPast() {
+    return this.distance < 0;
+  }
+
+  get days() {
+    return ('0' + Math.floor(this.distance / (1000 * 60 * 60 * 24))).slice(-2);
+  }
+
+  get hours() {
+    return ('0' + Math.floor((this.distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).slice(-2);
+  }
+
+  get minutes() {
+    return ('0' + Math.floor((this.distance % (1000 * 60 * 60)) / (1000 * 60))).slice(-2);
+  }
+
+  get seconds() {
+    return ('0' + Math.floor((this.distance % (1000 * 60)) / 1000)).slice(-2);
   }
 }

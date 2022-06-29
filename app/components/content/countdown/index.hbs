@@ -1,1 +1,25 @@
-{{this.dateString}}
+{{#if this.isPast}}
+  💒 👰 🎊 🎉 🍾 🍻
+{{else}}
+  <div class={{bem this.blockName}}>
+    <div class={{bem this.blockName "slot"}}>
+      <div class={{bem this.blockName "label"}}>Tage</div>
+      <div class={{bem this.blockName "value"}}>{{this.days}}</div>
+    </div>
+    <div class={{bem this.blockName "spacer"}}>:</div>
+    <div class={{bem this.blockName "slot"}}>
+      <div class={{bem this.blockName "label"}}>Stunden</div>
+      <div class={{bem this.blockName "value"}}>{{this.hours}}</div>
+    </div>
+    <div class={{bem this.blockName "spacer"}}>:</div>
+    <div class={{bem this.blockName "slot"}}>
+      <div class={{bem this.blockName "label"}}>Minuten</div>
+      <div class={{bem this.blockName "value"}}>{{this.minutes}}</div>
+    </div>
+    <div class={{bem this.blockName "spacer"}}>:</div>
+    <div class={{bem this.blockName "slot"}}>
+      <div class={{bem this.blockName "label"}}>Sekunden</div>
+      <div class={{bem this.blockName "value"}}>{{this.seconds}}</div>
+    </div>
+  </div>
+{{/if}}

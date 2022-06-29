@@ -1,0 +1,19 @@
+/* ==========================================================================
+  # CONTENT COUNTDOWN
+  ========================================================================== */
+
+.c-content-countdown {
+  display: inline-flex;
+
+  &__value {
+    @include inuit-font-size(90px);
+    line-height: 1;
+    margin-top: spacing('tiny');
+  }
+
+  &__spacer {
+    @include inuit-font-size(90px);
+    line-height: 1;
+    margin: spacing('base') spacing('small') 0;
+  }
+}
