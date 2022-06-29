@@ -13,6 +13,10 @@ module.exports = function (environment) {
       propagation: true
     },
 
+    fastboot: {
+      hostWhitelist: ['hundertsieben.love', 'localhost:4200']
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

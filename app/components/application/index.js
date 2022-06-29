@@ -4,6 +4,8 @@ import { inject as service } from '@ember/service';
 export default class ApplicationComponent extends Component {
   // Services
   @service app;
+  @service fastboot;
+
 
 
   // Defaults
@@ -14,8 +16,10 @@ export default class ApplicationComponent extends Component {
   constructor() {
     super(...arguments);
 
-    this.fixCssVh();
-    window.addEventListener('resize', this.fixCssVh);
+    if (!this.fastboot?.isFastBoot) {
+      this.fixCssVh();
+      window.addEventListener('resize', this.fixCssVh);
+    }
   }
 
 
