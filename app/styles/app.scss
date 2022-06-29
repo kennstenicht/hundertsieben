@@ -7,7 +7,7 @@
 @import "settings/settings.fonts";
 @import "settings/settings.global";
 // Inuitcss
-@import "inuitcss/settings/settings.core";
+@import "settings/settings.core";
 
 
 
@@ -17,10 +17,10 @@
   ========================================================================== */
 
 // Inuitcss
-@import "inuitcss/tools/tools.font-size";
-@import "inuitcss/tools/tools.clearfix";
+@import "tools/tools.font-size";
+@import "tools/tools.clearfix";
 // Vendor
-@import "sass-mq/mq";
+@import "mq";
 // Theme
 @import "tools/tools.attention";
 @import "tools/tools.color-mode";
@@ -38,10 +38,10 @@
   ========================================================================== */
 
 // Inuitcss
-@import "inuitcss/generic/generic.box-sizing";
-@import "inuitcss/generic/generic.normalize";
-@import "inuitcss/generic/generic.reset";
-@import "inuitcss/generic/generic.shared";
+@import "generic/generic.box-sizing";
+@import "generic/generic.normalize";
+@import "generic/generic.reset";
+@import "generic/generic.shared";
 
 
 
@@ -63,8 +63,8 @@
   ========================================================================== */
 
 // Inuitcss
-@import "inuitcss/objects/objects.layout";
-@import "inuitcss/objects/objects.wrapper";
+@import "objects/objects.layout";
+@import "objects/objects.wrapper";
 // Theme
 @import "objects/objects.wrapper";
 
@@ -101,8 +101,8 @@
   ========================================================================== */
 
 // Inuitcss
-@import "inuitcss/utilities/utilities.spacings";
-@import "inuitcss/utilities/utilities.widths";
+@import "utilities/utilities.spacings";
+@import "utilities/utilities.widths";
 // Theme
 @import "utilities/utilities.font";
 @import "utilities/utilities.grayscale";

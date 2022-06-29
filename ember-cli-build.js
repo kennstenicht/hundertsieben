@@ -5,7 +5,10 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     sassOptions: {
-      includePaths: ['node_modules'],
+      includePaths: [
+        'node_modules/inuitcss',
+        'node_modules/sass-mq'
+      ],
       quietDeps: true,
     },
     fingerprint: {
