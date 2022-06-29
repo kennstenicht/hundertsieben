@@ -11,7 +11,7 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "ember build --environment=production --output-path ../dist",
+    "build": "ember build --environment=production",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:hbs": "ember-template-lint .",
@@ -26,6 +26,9 @@
     "@ember/optional-features": "^2.0.0",
     "@ember/render-modifiers": "^2.0.4",
     "@ember/test-helpers": "^2.8.1",
+    "@embroider/compat": "^1.8.0",
+    "@embroider/core": "^1.8.0",
+    "@embroider/webpack": "^1.8.0",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
     "babel-eslint": "^10.1.0",
@@ -71,7 +74,7 @@
     "qunit-dom": "^2.0.0",
     "sass": "~1.32.12",
     "tracked-built-ins": "^3.1.0",
-    "webpack": "^5.72.1"
+    "webpack": "^5.73.0"
   },
   "engines": {
     "node": "12.* || 14.* || >= 16"
@@ -80,6 +83,7 @@
     "edition": "octane"
   },
   "dependencies": {
+    "@embroider/router": "^1.8.0",
     "smoothscroll-polyfill": "^0.4.4"
   }
 }
