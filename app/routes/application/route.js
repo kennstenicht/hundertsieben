@@ -3,7 +3,6 @@ import { inject as service } from '@ember/service';
 
 export default class ApplicationRoute extends Route {
   // Services
-  @service fastboot;
   @service router;
 
 
@@ -11,9 +10,7 @@ export default class ApplicationRoute extends Route {
   constructor() {
     super(...arguments);
 
-    if (!this.fastboot.isFastBoot) {
-      this.router.on('routeDidChange', this.scrollTop);
-    }
+    this.router.on('routeDidChange', this.scrollTop);
   }
 
 
