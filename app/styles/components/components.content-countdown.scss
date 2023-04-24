@@ -6,14 +6,48 @@
   display: inline-flex;
 
   &__value {
-    @include inuit-font-size(90px);
     line-height: 1;
     margin-top: spacing('tiny');
   }
 
   &__spacer {
-    @include inuit-font-size(90px);
     line-height: 1;
-    margin: spacing('base') spacing('small') 0;
+  }
+}
+
+
+
+
+
+/* Media queryies
+  ========================================================================== */
+
+@include mq($until: desktop) {
+  .c-content-countdown {
+    &__label {
+      @include inuit-font-size(12px);
+    }
+
+    &__value {
+      @include inuit-font-size(30px);
+    }
+
+    &__spacer {
+      @include inuit-font-size(30px);
+      margin: spacing('base') spacing('tiny') 0;
+    }
+  }
+}
+
+@include mq($from: desktop) {
+  .c-content-countdown {
+    &__value {
+      @include inuit-font-size(90px);
+    }
+
+    &__spacer {
+      @include inuit-font-size(90px);
+      margin: spacing('base') spacing('small') 0;
+    }
   }
 }
